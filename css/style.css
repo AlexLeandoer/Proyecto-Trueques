@@ -1,0 +1,138 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+nav.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 180px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    z-index: 9999;
+}
+
+@media screen and (max-width:767px){
+    nav.navbar{  
+        padding: 25px 5px;
+    }
+    /* section#banner{
+        display: none;
+    } */
+
+    section#servicios{
+        margin-top: 200px;
+    }
+
+    section#servicios div.col-md-4{
+        margin-bottom: 50px;
+    }
+}
+
+header#header a.nav-item{
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/*Cambios en banner*/
+section#banner{
+     margin-top: 100px;
+} 
+
+/*Cambios en servicios*/
+section#servicios, section#testimonios, section#contacto{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*testimonios*/
+section#testimonios{
+    background-color: #e9ecef;
+}
+@media (min-width:992px){
+    section#testimonios h1{
+       font-size: 4rem;
+       font-weight: 700;
+    }
+    
+}
+
+section#testimonios a.btm, section#contacto button[type="submit"]{
+    margin-top: 40px;
+    padding: 20px 40px;
+}
+
+section#testimonios div.jumbotron{
+    opacity: 0;
+}
+
+/*contacto*/
+section#contacto input, section#contacto select{
+    padding: 30px;
+}
+
+/* Navegacion lateral de categorias */
+section#categorias ul{
+    background: #343A40;
+    width: 100%;
+    padding: 20px;
+    height: 600px;
+}
+
+section#categorias p{
+    font-size: 1.3rem;
+    text-align: center;
+    background: lightblue;
+    font-weight: 500;
+}
+
+/*Seccion destacados*/
+section#destacados h2:after{
+    margin-top: 1%;
+    width: 30%;
+    border: solid 0.5px #343A40;
+    border-radius: 50px;
+}
+
+
+
+/*Header*/
+
+header#header2{
+   width: 100%;
+   background-color:tomato !important; 
+   padding: 20px;  
+   display: flex !important;     
+   justify-content: space-around;
+}
+
+form.buscador{
+    background-color: #fff;
+    padding: 4px;
+    border: 2px solid lightgrey;
+    border-radius: 25px;
+}
+.icon-search:before {
+    content: "\e986";
+    display: inline-block;
+  
+}
+
+div.icon-search input{
+    border: none;
+    background-color: transparent;
+    outline:0 !important;
+}
+
+
+footer{
+    height: 150px;
+    background-color: #343A40;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
