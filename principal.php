@@ -1,19 +1,5 @@
 <?php include_once("header.php"); ?>
   <header id="header2">
-    <!-- <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#">Logo</a>
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacion" aria-controls="navegacion" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navegacion">
-        <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link active" href="#">Home</a>
-          <a class="nav-item nav-link" href="#">Entra o regístrate</a>
-          <a class="nav-item nav-link" href="#">Carrito</a>
-        </div>
-      </div>
-    </nav> -->
     <div class="logo">
         logo<!-- <img src="img/logo.png" alt=""> -->
     </div>
@@ -45,26 +31,30 @@
                       <li><a href="#">Otros</a></li>
                   </ul>
               </div>
-              
           </div>
       </div>
   </section>
 
-  <section id="destacados">
-      <div class="container">
-        <div class="row">
-            <div class="col-md">
-                <h2>Usuarios destacados de la semana</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-2"></div>
-            <div class="col-md-2"></div>
-            <div class="col-md-2"></div>
-            <div class="col-md-2"></div>
-        </div>
+  <section class="container">
+      <div class="col-md-4" id="navegacion">
+        <a href="#" id="home">Home</a>
+        <a href="#" id="destacados">Destacados</a>
+      </div>
+      <div class="col-md-8" id="contenido">
       </div>
   </section>
 
 <?php include_once("footer.php"); ?>
+<script>
+    $(function(){
+        $("#home").click(function(e){
+            e.preventDefault();
+            $('#contenido').load("servicio.html");
+        });
+        $("#destacados").click(function(e){
+            e.preventDefault();
+            $('#contenido').load("destacados.html");
+        });
+    });
+    
+</script>
