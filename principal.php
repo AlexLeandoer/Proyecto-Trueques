@@ -1,18 +1,18 @@
 <?php include_once("header.php"); ?>
 <header id="header2">
-<div class="logo">
-    logo<!-- <img src="img/logo.png" alt=""> -->
-</div>
-<form class="form-inline d-flex justify-content-center buscador">
-    <div class="icon-search">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+    <div class="logo">
+        logo<!-- <img src="img/logo.png" alt=""> -->
     </div>
-</form>
+    <form class="form-inline d-flex justify-content-center buscador">
+        <div class="icon-search">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+        </div>
+    </form>
 
-<div class="botones">
-    <a href="#">Login</a>
-    <a href="#">Carrito</a>
-</div>
+    <div class="botones">
+        <a href="#">Login</a>
+        <a href="#">Carrito</a>
+    </div>
 </header>
 
 <section id="categorias">
@@ -41,7 +41,7 @@
 </section>
 <div class="col-md-4" id="navegacion">
     <a href="#" id="home">Home</a>
-    <a href="#" id="destacados">Destacados</a>
+    <a href="#" id="d">Destacados</a>
 </div>
 
     
@@ -54,7 +54,7 @@
             e.preventDefault();
             $('#contenido').load("servicio.html");
         });
-        $("#destacados").click(function(e){
+        $("#d").click(function(e){
             e.preventDefault();
             $('#contenido').load("d.html");
         });

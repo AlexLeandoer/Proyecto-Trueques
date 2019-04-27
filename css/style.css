@@ -30,15 +30,22 @@ section#contacto input, section#contacto select { padding: 30px; }
 section#contacto button[type="submit"] { margin-top: 40px; padding: 20px 40px; }
 
 /* Navegacion lateral de categorias */
-section#categorias { background-color: #EEF6FF; }
+section#categorias { background-color: #EEF6FF; /*Seccion destacados*/ /*Fin destacados*/ }
 section#categorias ul { background: #A2CFFF; width: 100%; padding: 20px; height: 600px; }
 section#categorias #nav-left p { font-size: 1.15rem; text-align: center; background: #32577F; padding: 10px; color: #EEF6FF; font-weight: 600; text-transform: uppercase; }
 section#categorias h3 { text-transform: uppercase; color: #32577F; font-weight: 400; }
 section#categorias h3 span { font-weight: 600; }
-section#categorias h3::after { width: 50px; height: 3px; background-color: #777B7F; margin-top: 10px; margin-bottom: 20px; content: ""; display: block; }
+section#categorias h3:after { width: 50px; height: 3px; background-color: #777B7F; margin-top: 10px; margin-bottom: 20px; content: ""; display: block; }
 
-/*Seccion destacados*/
-section#destacados h2:after { margin-top: 1%; width: 30%; border: solid 0.5px #343A40; border-radius: 50px; }
+/*Seccion pagina de servicio*/
+section#servicio { background: #EEF6FF; }
+section#servicio img { max-width: 100%; }
+section#servicio button { background: #32577F; font-weight: 500; color: #EEF6FF; text-transform: uppercase; border: none; padding: 15px; }
+section#servicio button:hover { background: #192d42; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+section#servicio h3 { color: #32577F; text-transform: uppercase; font-weight: 600; font-size: 1.5rem; }
+section#servicio #descripcion { background: #fff; padding: 20px; }
+section#servicio #descripcion p { color: #777B7F; }
+section#servicio #descripcion .user { color: #32577F; font-weight: 600; font-size: 1.2rem; }
 
 /*Header*/
 header#header2 { width: 100%; background-color: #A2CFFF !important; padding: 20px; display: flex !important; justify-content: space-around; }
@@ -50,7 +57,9 @@ form.buscador { background-color: #EEF6FF; padding: 4px; border: 2px solid light
 div.icon-search input { border: none; background-color: transparent; outline: 0 !important; }
 
 /*Intercambios*/
+section#intercambio { background: #EEF6FF; }
 section#intercambio .cajasintercambio { border: 1px solid black; }
+section#intercambio h3 { color: #32577F; font-size: 1.4rem; font-weight: 600; }
 
 /*Footer*/
 footer { height: 150px; background-color: #343A40; color: white; display: flex; justify-content: center; align-items: center; text-align: center; }

@@ -123,6 +123,7 @@ section#categorias{
         font-weight: 600;
         text-transform: uppercase;
     }
+    /*Seccion destacados*/
     h3{
         text-transform: uppercase;
         color: $dark;
@@ -130,7 +131,7 @@ section#categorias{
         span{
             font-weight: 600;
         }
-        &::after{
+        &:after{
             width: 50px;
             height: 3px;
             background-color: $grey;
@@ -140,14 +141,47 @@ section#categorias{
             display: block;
         }   
     }
+    /*Fin destacados*/
+
 }
 
-/*Seccion destacados*/
-section#destacados h2:after{
-    margin-top: 1%;
-    width: 30%;
-    border: solid 0.5px #343A40;
-    border-radius: 50px;
+
+/*Seccion pagina de servicio*/
+section#servicio{
+    background: $light;
+    img{
+        max-width: 100%;
+    }
+    button{
+        background: $dark;
+        font-weight: 500;
+        color: $light;
+        text-transform: uppercase;
+        border: none;
+        padding: 15px;
+        &:hover{
+            background: rgb(25, 45, 66);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+    }
+    h3{
+        color: $dark;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+    #descripcion{
+        background: #fff;
+        padding: 20px;
+        p{
+            color: $grey;
+        }
+        .user{
+            color: $dark;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+    }
 }
 
 
@@ -180,8 +214,16 @@ div.icon-search input{
 }
 
 /*Intercambios*/
-section#intercambio .cajasintercambio{
-    border: 1px solid black;
+section#intercambio{
+    background: $light;
+    .cajasintercambio{
+        border: 1px solid black;
+    }
+    h3{
+        color: $dark;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
 }
 
 /*Footer*/
