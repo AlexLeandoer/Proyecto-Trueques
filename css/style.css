@@ -1,145 +1,58 @@
-*{
-    font-family: 'Roboto', sans-serif;
-}
+body, html { font-family: "Roboto", sans-serif; font-size: 15px; }
 
-nav.navbar{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 25px 180px;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    z-index: 9999;
-}
+img { max-width: 100%; }
+
+nav.navbar { position: fixed; top: 0; width: 100%; padding: 25px 180px; background-color: #EEF6FF; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); z-index: 9999; }
 
 /* borde navbar */
-.navbar-toggler{
-    border: none !important;
-}
+.navbar-toggler { border: none !important; }
 
-@media screen and (max-width:767px){
-    nav.navbar{  
-        padding: 25px 5px;
-    }
-    /* section#banner{
-        display: none;
-    } */
-
-    section#servicios{
-        margin-top: 200px;
-    }
-
-    section#servicios div.col-md-4{
-        margin-bottom: 50px;
-    }
-}
-
-header#header a.nav-item{
-    font-size: 1.05rem;
-    text-transform: uppercase;
-    font-weight: 600;
-}
+@media screen and (max-width: 767px) { nav.navbar { padding: 25px 5px; }
+  section#servicios { margin-top: 200px; }
+  section#servicios div.col-md-4 { margin-bottom: 50px; } }
+header#header a.nav-item { font-size: 1.05rem; text-transform: uppercase; font-weight: 600; }
 
 /*Cambios en banner*/
-section#banner{
-     margin-top: 100px;
-} 
+section#banner { margin-top: 100px; }
 
 /*Cambios en servicios*/
-section#servicios, section#testimonios, section#contacto{
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+section#servicios, section#testimonios { height: 70vh; display: flex; justify-content: center; align-items: center; text-align: center; }
 
 /*testimonios*/
-section#testimonios{
-    background-color: #e9ecef;
-}
-@media (min-width:992px){
-    section#testimonios h1{
-       font-size: 4rem;
-       font-weight: 700;
-    }
-    
-}
+section#testimonios { background-color: #e9ecef; }
+section#testimonios a.btm { margin-top: 40px; padding: 20px 40px; }
+section#testimonios div.jumbotron { opacity: 0; }
 
-section#testimonios a.btm, section#contacto button[type="submit"]{
-    margin-top: 40px;
-    padding: 20px 40px;
-}
-
-section#testimonios div.jumbotron{
-    opacity: 0;
-}
-
+@media (min-width: 992px) { section#testimonios h1 { font-size: 4rem; font-weight: 700; } }
 /*contacto*/
-section#contacto input, section#contacto select{
-    padding: 30px;
-}
+section#contacto { height: 70vh; display: flex; justify-content: center; align-items: center; }
+section#contacto input, section#contacto select { padding: 30px; }
+section#contacto button[type="submit"] { margin-top: 40px; padding: 20px 40px; }
 
 /* Navegacion lateral de categorias */
-section#categorias ul{
-    background: #343A40;
-    width: 100%;
-    padding: 20px;
-    height: 600px;
-}
-
-section#categorias p{
-    font-size: 1.3rem;
-    text-align: center;
-    background: lightblue;
-    font-weight: 500;
-}
+section#categorias { background-color: #EEF6FF; }
+section#categorias ul { background: #A2CFFF; width: 100%; padding: 20px; height: 600px; }
+section#categorias #nav-left p { font-size: 1.15rem; text-align: center; background: #32577F; padding: 10px; color: #EEF6FF; font-weight: 600; text-transform: uppercase; }
+section#categorias h3 { text-transform: uppercase; color: #32577F; font-weight: 400; }
+section#categorias h3 span { font-weight: 600; }
+section#categorias h3::after { width: 50px; height: 3px; background-color: #777B7F; margin-top: 10px; margin-bottom: 20px; content: ""; display: block; }
 
 /*Seccion destacados*/
-section#destacados h2:after{
-    margin-top: 1%;
-    width: 30%;
-    border: solid 0.5px #343A40;
-    border-radius: 50px;
-}
-
-
+section#destacados h2:after { margin-top: 1%; width: 30%; border: solid 0.5px #343A40; border-radius: 50px; }
 
 /*Header*/
+header#header2 { width: 100%; background-color: #A2CFFF !important; padding: 20px; display: flex !important; justify-content: space-around; }
 
-header#header2{
-   width: 100%;
-   background-color:tomato !important; 
-   padding: 20px;  
-   display: flex !important;     
-   justify-content: space-around;
-}
+form.buscador { background-color: #EEF6FF; padding: 4px; border: 2px solid lightgrey; border-radius: 25px; }
 
-form.buscador{
-    background-color: #fff;
-    padding: 4px;
-    border: 2px solid lightgrey;
-    border-radius: 25px;
-}
-.icon-search:before {
-    content: "\e986";
-    display: inline-block;
-  
-}
+.icon-search:before { content: "\e986"; display: inline-block; }
 
-div.icon-search input{
-    border: none;
-    background-color: transparent;
-    outline:0 !important;
-}
+div.icon-search input { border: none; background-color: transparent; outline: 0 !important; }
 
+/*Intercambios*/
+section#intercambio .cajasintercambio { border: 1px solid black; }
 
-footer{
-    height: 150px;
-    background-color: #343A40;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/*Footer*/
+footer { height: 150px; background-color: #343A40; color: white; display: flex; justify-content: center; align-items: center; text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

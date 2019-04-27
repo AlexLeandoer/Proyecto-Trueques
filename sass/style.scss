@@ -1,3 +1,193 @@
+$primary:#A2CFFF;
+$grey: #777B7F;
+$dark:#32577F;
+$light:#EEF6FF;
+$tipo:'Roboto', sans-serif;
+$tam:15px;
+
+body,html{
+    font-family: $tipo;
+    font-size: $tam;
+}
+
+img{
+    max-width: 100%;
+}
+
+//Caja flex
+@mixin flexible($direccion, $centrar) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direccion;
+    text-align: $centrar;
+}
+
+@mixin full {
+    width: 100%;
+    min-height: 100vh;
+}
+
+nav.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 180px;
+    background-color: $light;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    z-index: 9999;
+}
+
+/* borde navbar */
+.navbar-toggler{
+    border: none !important;
+}
+
+@media screen and (max-width:767px){
+    nav.navbar{  
+        padding: 25px 5px;
+    }
+
+    section#servicios{
+        margin-top: 200px;
+    }
+
+    section#servicios div.col-md-4{
+        margin-bottom: 50px;
+    }
+}
+
+header#header a.nav-item{
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/*Cambios en banner*/
+section#banner{
+     margin-top: 100px;
+} 
+
+/*Cambios en servicios*/
+section#servicios, section#testimonios{
+    height: 70vh;
+    @include flexible(null, center);
+}
+
+/*testimonios*/
+section#testimonios{
+    background-color: #e9ecef;
+    a.btm{
+        margin-top: 40px;
+        padding: 20px 40px;
+    }
+    div.jumbotron{
+        opacity: 0;
+    }
+}
+@media (min-width:992px){
+    section#testimonios h1{
+       font-size: 4rem;
+       font-weight: 700;
+    }
+}
+
+/*contacto*/
+section#contacto {
+    height: 70vh;
+    @include flexible(null, null);
+    input, select{
+        padding: 30px;
+    }
+    button[type="submit"]{
+        margin-top: 40px;
+        padding: 20px 40px;
+    }    
+}
+
+/* Navegacion lateral de categorias */
+section#categorias{
+    background-color: $light;
+    ul{
+        background: $primary;
+        width: 100%;
+        padding: 20px;
+        height: 600px;
+    }
+    #nav-left p{
+        font-size: 1.15rem;
+        text-align: center;
+        background: $dark;
+        padding: 10px;
+        color:$light;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    h3{
+        text-transform: uppercase;
+        color: $dark;
+        font-weight: 400;
+        span{
+            font-weight: 600;
+        }
+        &::after{
+            width: 50px;
+            height: 3px;
+            background-color: $grey;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            content: "";
+            display: block;
+        }   
+    }
+}
+
+/*Seccion destacados*/
+section#destacados h2:after{
+    margin-top: 1%;
+    width: 30%;
+    border: solid 0.5px #343A40;
+    border-radius: 50px;
+}
+
+
+
+/*Header*/
+header#header2{
+   width: 100%;
+   background-color: $primary !important; 
+   padding: 20px;  
+   display: flex !important;     
+   justify-content: space-around;
+}
+
+form.buscador{
+    background-color: $light;
+    padding: 4px;
+    border: 2px solid lightgrey;
+    border-radius: 25px;
+}
+.icon-search:before {
+    content: "\e986";
+    display: inline-block;
+  
+}
+
+div.icon-search input{
+    border: none;
+    background-color: transparent;
+    outline:0 !important;
+}
+
+/*Intercambios*/
 section#intercambio .cajasintercambio{
     border: 1px solid black;
+}
+
+/*Footer*/
+footer{
+    height: 150px;
+    background-color: #343A40;
+    color: white;
+    @include flexible(null, center);
 }
