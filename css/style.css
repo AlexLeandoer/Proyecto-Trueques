@@ -51,9 +51,9 @@ section#servicio #descripcion ul { color: #777B7F; }
 /*Header*/
 header#header2 { width: 100%; background-color: #A2CFFF !important; padding: 20px; display: flex !important; justify-content: space-around; }
 
-form.buscador { background-color: #EEF6FF; padding: 4px; border: 2px solid lightgrey; border-radius: 25px; }
+form.buscador { background-color: #EEF6FF; padding: 0px 100px; border: 2px solid lightgrey; border-radius: 10px; font-family: "Roboto", sans-serif; }
 
-.icon-search:before { content: "\e986"; display: inline-block; }
+.icon-search:before { content: "\e986"; display: inline-block; flex-direction: start; }
 
 div.icon-search input { border: none; background-color: transparent; outline: 0 !important; }
 
@@ -64,7 +64,7 @@ section#intercambio .resultado { text-align: center; }
 section#intercambio .resultado h4 { background-color: #A2CFFF; border-radius: 5px; padding: 10px; margin: 20px; }
 section#intercambio .resultado h4 img { margin-right: 10px; }
 section#intercambio .resultado .service { margin: 20px; background-color: #EEF6FF; border-radius: 5px; padding: 10px; }
-section#intercambio h3 { color: #32577F; font-size: 1.4rem; font-weight: 500; margin-bottom: 20px; }
+section#intercambio h3 { color: #32577F; font-size: 1.4rem; font-weight: 750; margin-bottom: 20px; }
 section#intercambio .dropdown { margin-bottom: 20px; }
 section#intercambio .dropdown .btn { border: 1px solid #32577F; background-color: #A2CFFF; color: #32577F; }
 section#intercambio .btn-group { margin-bottom: 20px; }
