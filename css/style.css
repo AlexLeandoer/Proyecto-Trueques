@@ -46,6 +46,7 @@ section#servicio h3 { color: #32577F; text-transform: uppercase; font-weight: 60
 section#servicio #descripcion { background: #fff; padding: 20px; }
 section#servicio #descripcion p { color: #777B7F; }
 section#servicio #descripcion .user { color: #32577F; font-weight: 600; font-size: 1.2rem; }
+section#servicio #descripcion ul { color: #777B7F; }
 
 /*Header*/
 header#header2 { width: 100%; background-color: #A2CFFF !important; padding: 20px; display: flex !important; justify-content: space-around; }
@@ -58,10 +59,24 @@ div.icon-search input { border: none; background-color: transparent; outline: 0 
 
 /*Intercambios*/
 section#intercambio { background: #EEF6FF; }
-section#intercambio .cajasintercambio { border: 1px solid black; }
-section#intercambio h3 { color: #32577F; font-size: 1.4rem; font-weight: 600; }
+section#intercambio .cajasintercambio { padding: 60px; background: white; margin: 40px; }
+section#intercambio .resultado { text-align: center; }
+section#intercambio .resultado h4 { background-color: #A2CFFF; border-radius: 5px; padding: 10px; margin: 20px; }
+section#intercambio .resultado h4 img { margin-right: 10px; }
+section#intercambio .resultado .service { margin: 20px; background-color: #EEF6FF; border-radius: 5px; padding: 10px; }
+section#intercambio h3 { color: #32577F; font-size: 1.4rem; font-weight: 500; margin-bottom: 20px; }
+section#intercambio .dropdown { margin-bottom: 20px; }
+section#intercambio .dropdown .btn { border: 1px solid #32577F; background-color: #A2CFFF; color: #32577F; }
+section#intercambio .btn-group { margin-bottom: 20px; }
+section#intercambio .btn-group button { background: #EEF6FF; border: none; color: #A2CFFF; }
+section#intercambio .btn-group .active { background: #A2CFFF; color: #32577F; }
+section#intercambio a.btn { background: #32577F; border: none; padding: 5px 40px; display: flex; justify-content: center; align-items: center; }
+section#intercambio a.btn:hover { background: #192d42; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+section#intercambio .list-group { border: 1px solid #32577F; border-radius: 4px; background-color: #EEF6FF; color: #32577F; margin-bottom: 20px; }
+section#intercambio .list-group .active { background-color: #A2CFFF; border: none; color: #32577F; font-weight: 600; }
+section#intercambio input[type=text] { margin-top: 20px; background: #EEF6FF; border: none; border-radius: 6px; display: block; padding: 25px 95px; }
 
 /*Footer*/
-footer { height: 150px; background-color: #343A40; color: white; display: flex; justify-content: center; align-items: center; text-align: center; }
+footer { height: 200px; background-color: #343A40; color: white; display: flex; justify-content: center; align-items: center; text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

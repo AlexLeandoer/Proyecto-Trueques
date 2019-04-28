@@ -181,9 +181,11 @@ section#servicio{
             font-weight: 600;
             font-size: 1.2rem;
         }
+        ul{
+            color: $grey;
+        }
     }
 }
-
 
 
 /*Header*/
@@ -217,18 +219,93 @@ div.icon-search input{
 section#intercambio{
     background: $light;
     .cajasintercambio{
-        border: 1px solid black;
+        padding: 60px;
+        background: white;
+        margin: 40px;
+    }
+    .resultado{
+        text-align: center;
+        h4{
+            background-color: $primary;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px;
+            img{
+                margin-right: 10px;
+            }
+        }
+        .service{
+            margin: 20px;
+            background-color: $light;
+            border-radius: 5px;
+            padding: 10px;
+        }
     }
     h3{
         color: $dark;
         font-size: 1.4rem;
-        font-weight: 600;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .dropdown{
+        margin-bottom: 20px;
+        .btn{
+            border: 1px solid $dark;
+            background-color: $primary;
+            color: $dark;
+            
+        }
+    }
+    .btn-group{
+        margin-bottom: 20px;
+        // background: $dark;
+        button{
+            background: $light;
+            border: none;
+            color: $primary;
+        }
+        .active{
+            background: $primary;
+            color: $dark;
+        }
+    }
+    a.btn{
+        background:$dark;
+        border:none;
+        padding: 5px 40px;
+        @include flexible(null, null);
+        &:hover{
+            background: rgb(25, 45, 66);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+    }
+    .list-group{
+        border: 1px solid $dark;
+        border-radius: 4px;
+        background-color: $light;
+        color: $dark;
+        margin-bottom: 20px;
+        .active{
+            background-color: $primary;
+            border: none;
+            color: $dark;
+            font-weight: 600;
+        }
+    }
+
+    input[type=text]{
+        margin-top: 20px;
+        background: $light;
+        border: none;
+        border-radius: 6px;
+        display: block;
+        padding: 25px 95px;
     }
 }
 
 /*Footer*/
 footer{
-    height: 150px;
+    height: 200px;
     background-color: #343A40;
     color: white;
     @include flexible(null, center);

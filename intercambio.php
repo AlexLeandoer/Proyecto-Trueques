@@ -46,16 +46,16 @@
                 <input type="text" placeholder="Añade un comentario...">
             </div>
 
-            <div class="col-md-5 cajasintercambio">
+            <div class="col-md-5 cajasintercambio resultado">
                 <h3>Intercambio</h3>
-                <h4><img src="">Tu ofreces:</h4>
-                <div>
+                <h4><img src="http://placehold.it/30x30">Tu ofreces:</h4>
+                <div class="service">
                     <img src="" alt="">
                     <p>Servicio 4</p>
                     <p>Lorem ipsum dolor sit amet.</p>
                 </div>
-                <h4><img src="">El ofrece:</h4>
-                <div>
+                <h4><img src="http://placehold.it/30x30">El ofrece:</h4>
+                <div class="service">
                     <img src="" alt="">
                     <p>Servicio 3</p>
                     <p>Lorem ipsum dolor sit amet.</p>
