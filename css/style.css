@@ -2,7 +2,7 @@ body, html { font-family: "Roboto", sans-serif; font-size: 15px; }
 
 img { max-width: 100%; }
 
-nav.navbar { position: fixed; top: 0; width: 100%; padding: 25px 180px; background-color: #EEF6FF; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); z-index: 9999; }
+nav.navbar { position: fixed; top: 0; width: 100%; padding: 25px 180px; background-color: #A2CFFF; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); z-index: 9999; border: none; }
 
 /* borde navbar */
 .navbar-toggler { border: none !important; }
@@ -10,17 +10,26 @@ nav.navbar { position: fixed; top: 0; width: 100%; padding: 25px 180px; backgrou
 @media screen and (max-width: 767px) { nav.navbar { padding: 25px 5px; }
   section#servicios { margin-top: 200px; }
   section#servicios div.col-md-4 { margin-bottom: 50px; } }
-header#header a.nav-item { font-size: 1.05rem; text-transform: uppercase; font-weight: 600; }
+header#header a.nav-item { font-size: 1.05rem; text-transform: uppercase; font-weight: 600; margin-left: 20px; padding: 6px 40px; background-color: #32577F; color: #EEF6FF; border: none; }
 
-/*Cambios en banner*/
+/*
+************************
+*        INDEX         *
+************************
+*/
+/*Section banner*/
 section#banner { margin-top: 100px; }
+section#banner .textobanner { margin-top: 120px; text-align: right; }
+section#banner h1 { font-size: 3.5rem; color: #32577F; font-weight: bolder; }
+section#banner p { margin-top: 30px; color: #A2CFFF; font-size: 1.4rem; }
+section#banner a.btn { margin-top: 30px; padding: 15px 70px; background: #32577F; font-weight: bold; text-transform: uppercase; }
 
 /*Cambios en servicios*/
 section#servicios, section#testimonios { height: 70vh; display: flex; justify-content: center; align-items: center; text-align: center; }
 
 /*testimonios*/
 section#testimonios { background-color: #e9ecef; }
-section#testimonios a.btm { margin-top: 40px; padding: 20px 40px; }
+section#testimonios a.btn { margin-top: 40px; padding: 20px 40px; }
 section#testimonios div.jumbotron { opacity: 0; }
 
 @media (min-width: 992px) { section#testimonios h1 { font-size: 4rem; font-weight: 700; } }
@@ -48,10 +57,22 @@ section#servicio #descripcion p { color: #777B7F; }
 section#servicio #descripcion .user { color: #32577F; font-weight: 600; font-size: 1.2rem; }
 section#servicio #descripcion ul { color: #777B7F; }
 
-/*Header*/
+/*Pagina de busqueda de servicio*/
+div#busqueda .item_busqueda { padding: 3px 10px; margin: 20px; background-color: white; border-radius: 4px; box-shadow: 0 0px 1px rgba(0, 0, 0, 0.12), 0 0px 5px rgba(0, 0, 0, 0.24); }
+div#busqueda .item_busqueda img { border: 2px solid #EEF6FF; }
+div#busqueda .item_busqueda h4 { color: #32577F; font-weight: 600; }
+div#busqueda .item_busqueda p { color: #777B7F; }
+div#busqueda .item_busqueda p a.btn { margin-left: 50px; }
+div#busqueda .item_busqueda .user { margin-top: 30px; color: #32577F; font-size: 1.3rem; }
+div#busqueda .item_busqueda .user a { text-decoration: underline; color: #32577F; }
+div#busqueda .item_busqueda .user a:hover { font-weight: 400; }
+div#busqueda .item_busqueda a.btn { background: #32577F; font-weight: 300; color: #EEF6FF; border: none; padding: 3px 15px; }
+div#busqueda .item_busqueda a.btn:hover { background: #192d42; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+/*Header */
 header#header2 { width: 100%; background-color: #A2CFFF !important; padding: 20px; display: flex !important; justify-content: space-around; }
 
-form.buscador { background-color: #EEF6FF; padding: 0px 100px; border: 2px solid lightgrey; border-radius: 10px; font-family: "Roboto", sans-serif; }
+form.buscador { background-color: #EEF6FF; padding: 0px 100px; border: 2px solid lightgrey; border-radius: 5px; font-family: "Roboto", sans-serif; }
 
 .icon-search:before { content: "\e986"; display: inline-block; flex-direction: start; }
 
@@ -75,6 +96,16 @@ section#intercambio a.btn:hover { background: #192d42; box-shadow: 0 4px 6px rgb
 section#intercambio .list-group { border: 1px solid #32577F; border-radius: 4px; background-color: #EEF6FF; color: #32577F; margin-bottom: 20px; }
 section#intercambio .list-group .active { background-color: #A2CFFF; border: none; color: #32577F; font-weight: 600; }
 section#intercambio input[type=text] { margin-top: 20px; background: #EEF6FF; border: none; border-radius: 6px; display: block; padding: 25px 95px; }
+
+section#login { background: #EEF6FF; }
+section#login form#contenido_form { background-color: #A2CFFF; border: 2px solid #32577F; padding: 50px; border-radius: 5px; margin: 20px; }
+section#login form#contenido_form button { margin-top: 20px; padding: 5px 50px; background-color: #32577F; border: none; text-align: center; text-transform: uppercase; }
+section#login form#contenido_form button:hover { background: #192d42; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+section#login form#contenido_form .form-group label { text-transform: uppercase; color: #32577F; font-weight: 600; }
+section#login form#contenido_form .form-group input { border: 2px solid #32577F; background-color: #EEF6FF; }
+section#login form#contenido_form .form-group ::placeholder { color: #777B7F; }
+section#login h2 { display: inline-block; margin-left: 10px; margin-top: 20px; padding: 4px 20px; text-transform: uppercase; font-weight: 600; color: #32577F; }
+section#login h2 a { color: #A2CFFF; }
 
 /*Footer*/
 footer { height: 200px; background-color: #343A40; color: white; display: flex; justify-content: center; align-items: center; text-align: center; }

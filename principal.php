@@ -40,7 +40,7 @@
     <!-- fin container -->
 </section>
 <div class="col-md-4" id="navegacion">
-    <a href="#" id="home">Home</a>
+    <a href="#" id="home">Buscar</a>
     <a href="#" id="d">Destacados</a>
 </div>
 
@@ -52,7 +52,7 @@
     $(function(){
         $("#home").click(function(e){
             e.preventDefault();
-            $('#contenido').load("servicio.html");
+            $('#contenido').load("busqueda.php");
         });
         $("#d").click(function(e){
             e.preventDefault();

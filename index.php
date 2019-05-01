@@ -8,9 +8,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navegacion">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link active" href="#">Home</a>
-          <a class="nav-item nav-link" href="#">Entra o regístrate</a>
-          <a class="nav-item nav-link" href="#">Carrito</a>
+          <a class="nav-item nav-link btn btn-dark" href="login.php">Entra o regístrate</a>
         </div>
       </div>
     </nav>
@@ -19,8 +17,8 @@
     <section id="banner">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing.</h1>
+                <div class="col-md-6 textobanner">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maxime praesentium aliquid molestias officiis alias quia assumenda magnam esse deleniti?</p>
                     <a href="#" class="btn btn-dark">únete</a>
                 </div>
@@ -28,13 +26,13 @@
                 <div id="carrusel" class="carousel slide col-md-6" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                        <img class="d-block w-100" src="https://lorempixel.com/1920/1080/business" alt="First slide">
+                        <img class="d-block w-100" src="http://placehold.it/650x950" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                        <img class="d-block w-100" src="https://lorempixel.com/1920/1080/business" alt="Second slide">
+                        <img class="d-block w-100" src="http://placehold.it/650x950" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                        <img class="d-block w-100" src="https://lorempixel.com/1920/1080/business" alt="Third slide">
+                        <img class="d-block w-100" src="http://placehold.it/650x950" alt="Third slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carrusel" role="button" data-slide="prev">
@@ -55,7 +53,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top" src="https://lorempixel.com/800/600/fashion" alt="Card image cap">
+                    <img class="card-img-top" src="http://placehold.it/800x600" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -65,7 +63,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top" src="https://lorempixel.com/800/600/fashion" alt="Card image cap">
+                    <img class="card-img-top" src="http://placehold.it/800x600" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -75,7 +73,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top" src="https://lorempixel.com/800/600/fashion" alt="Card image cap">
+                    <img class="card-img-top" src="http://placehold.it/800x600" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -105,12 +103,12 @@
     <section id="contacto">
         <form class="container">
             <div class="form-row">
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
                 <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-12">
                 <input type="text class="form-control" id="inputAddress" placeholder="Comentanos algo...">
             </div>
             <div class="form-group">

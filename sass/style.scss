@@ -33,9 +33,10 @@ nav.navbar{
     top: 0;
     width: 100%;
     padding: 25px 180px;
-    background-color: $light;
+    background-color: $primary;
     box-shadow: 0 4px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     z-index: 9999;
+    border: none;
 }
 
 /* borde navbar */
@@ -61,11 +62,44 @@ header#header a.nav-item{
     font-size: 1.05rem;
     text-transform: uppercase;
     font-weight: 600;
+    margin-left: 20px;
+    padding: 6px 40px;
+    background-color: $dark;
+    color: $light;
+    border: none;
 }
 
-/*Cambios en banner*/
+/*
+************************
+*        INDEX         *
+************************
+*/
+
+/*Section banner*/
 section#banner{
-     margin-top: 100px;
+    margin-top: 100px;
+
+    .textobanner{
+        margin-top: 120px;
+        text-align: right;
+    }
+    h1{
+        font-size: 3.5rem;
+        color: $dark;
+        font-weight: bolder;
+    }
+    p{
+        margin-top: 30px;
+        color: $primary;
+        font-size: 1.4rem;
+    }
+    a.btn{
+        margin-top: 30px;
+        padding: 15px 70px;
+        background: $dark;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 } 
 
 /*Cambios en servicios*/
@@ -77,7 +111,7 @@ section#servicios, section#testimonios{
 /*testimonios*/
 section#testimonios{
     background-color: #e9ecef;
-    a.btm{
+    a.btn{
         margin-top: 40px;
         padding: 20px 40px;
     }
@@ -187,8 +221,54 @@ section#servicio{
     }
 }
 
+/*Pagina de busqueda de servicio*/
+div#busqueda{
+    .item_busqueda{
+        padding: 3px 10px;
+        margin: 20px;
+        background-color: white;
+        border-radius: 4px;
+        box-shadow: 0 0px 1px rgba(0,0,0,0.12), 0 0px 5px rgba(0,0,0,0.24);
+        img{
+            border: 2px solid $light;
+        }
+        h4{
+            color: $dark;
+            font-weight: 600;
+        }
+        p{
+            color: $grey;
+            a.btn{
+                margin-left: 50px;
+            }
+        }
+        .user{
+            margin-top: 30px;
+            color: $dark;
+            font-size: 1.3rem;
+            a{
+                text-decoration: underline;
+                color: $dark;
+                &:hover{
+                    font-weight: 400;
+                }
+            }
+        }
+        a.btn{
+            background: $dark;
+            font-weight: 300;
+            color: $light;
+            border: none;
+            padding: 3px 15px;
+            &:hover{
+                background: rgb(25, 45, 66);
+                box-shadow: 0 4px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            }
+        }
+    }
+}
 
-/*Header*/
+/*Header */
 header#header2{
    width: 100%;
    background-color: $primary !important; 
@@ -201,7 +281,7 @@ form.buscador{
     background-color: $light;
     padding: 0px 100px;
     border: 2px solid lightgrey;
-    border-radius: 10px;
+    border-radius: 5px;
     font-family: $tipo;
 }
 .icon-search:before {
@@ -305,6 +385,55 @@ section#intercambio{
 }
 
 section#login{
+    background: $light;
+    form#contenido_form{
+        background-color: $primary;
+        border: 2px solid $dark;
+        padding: 50px;
+        border-radius: 5px;
+        margin: 20px;
+        button{
+            margin-top: 20px;
+            padding: 5px 50px;
+            background-color: $dark;
+            border: none;
+            text-align: center;
+            text-transform: uppercase;
+            &:hover{
+                background: rgb(25, 45, 66);
+                box-shadow: 0 4px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            }
+        }
+        .form-group{
+            label{
+                text-transform: uppercase;
+                color: $dark;
+                font-weight: 600;
+            }
+            input{
+                border: 2px solid $dark;
+                background-color: $light;
+               
+            }
+            ::placeholder{
+                color: $grey;
+            }
+            
+        }
+    }
+    h2{
+        display: inline-block;
+        margin-left: 10px;
+        margin-top: 20px;
+        padding: 4px 20px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $dark;
+
+        a{
+            color: $primary;
+        }
+    }
     
 }
 

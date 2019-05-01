@@ -20,15 +20,15 @@
         <div class="row">
             <div class="col-md-8">
                 <h2>Login</h2>
-                <a href="#" id="registro_btn">Registro</a>
+                <h2><a href="#" id="registro_btn">Registro</a></h2>
                 <form id="contenido_form">
                     <div class="form-group">
                         <label for="email">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Introduce tu correo">
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Introduce tu correo...">
                     </div>
                     <div class="form-group">
                         <label for="contrasena">Contraseña</label>
-                        <input type="password" class="form-control" id="contrasena" placeholder="Introduce tu contraseña">
+                        <input type="password" class="form-control" id="contrasena" placeholder="Introduce tu contraseña....">
                     </div>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="recuerdame">
@@ -38,16 +38,7 @@
                 </form>
             </div>
         </div>
-    </section>
-    <!-- /*LOGIN*/
-section#login{
-
-}
-section#login form{
-    border: solid blue 2px;
-    padding: 40px;
-} -->
-    
+    </section>  
 
 <?php include_once("footer.php"); ?>
 <script>
