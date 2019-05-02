@@ -143,25 +143,43 @@ section#contacto {
 section#categorias{
     background-color: $light;
     ul{
-        background: $primary;
+        background: #fff;
+        border-radius: 4px;
         width: 100%;
         padding: 20px;
-        height: 600px;
+        height: 700px;
+        box-shadow: 6px 0 10px rgba(0, 0, 0, 0.089), 0px 0px 0px rgba(0,0,0,0.22);
+        li{
+            margin: 25px 20px;
+            a{color: $dark !important; font-size: 1.2rem;}
+            img{
+                margin-right: 20px;
+            }
+        }
     }
-    #nav-left p{
-        font-size: 1.15rem;
-        text-align: center;
-        background: $dark;
-        padding: 10px;
-        color:$light;
-        font-weight: 600;
-        text-transform: uppercase;
+    #nav-left {
+        // padding: 20px;
+        p{
+            font-size: 1.15rem;
+            text-align: center;
+            background: $dark;
+            padding: 5px;
+            color:$light;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
     }
-    /*Seccion destacados*/
+}
+
+/*Seccion destacados*/
+section#destacados{
     h3{
         text-transform: uppercase;
         color: $dark;
         font-weight: 400;
+        &:nth-child(1){
+            margin-top: 30px;
+        }
         span{
             font-weight: 600;
         }
@@ -173,12 +191,71 @@ section#categorias{
             margin-bottom: 20px;
             content: "";
             display: block;
-        }   
+        }  
     }
-    /*Fin destacados*/
+    img{
+        border: 2px #fff solid;
+        border-radius: 4px;
+        transition: 0.2s all;
+        &:hover{
+            filter: blur(3px);
+        }
+    }
+}
+/*Fin destacados*/
+
+/*Seccion perfil*/
+section#perfil{
+    background-color: $light;
+    .menu {
+        height: 100%;
+        width: 200px;
+        // position: fixed;
+        // z-index: 1;
+        background-color: $light;
+        overflow-x: hidden;
+        padding-top: 20px;
+        h4{
+            background-color: $primary;
+            text-transform: uppercase;
+            color: $dark;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 9px 8px 9px 16px; 
+            border-radius: 4px;
+        }
+        .enlaces{
+            background-color: #fff;
+            margin-top: -7px;
+        }
+        a{
+            padding: 7px 12px 7px 17px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: $dark;
+            display: block;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+    h3{
+        text-transform: uppercase;
+        color: $dark;
+        font-weight: 400;
+        margin-top: 20px;
+        &:after{
+            width: 50px;
+            height: 3px;
+            background-color: $grey;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            content: "";
+            display: block;
+        }
+    } 
 
 }
-
 
 /*Seccion pagina de servicio*/
 section#servicio{
@@ -227,7 +304,7 @@ div#busqueda{
         padding: 3px 10px;
         margin: 20px;
         background-color: white;
-        border-radius: 4px;
+        border-radius: 3px;
         box-shadow: 0 0px 1px rgba(0,0,0,0.12), 0 0px 5px rgba(0,0,0,0.24);
         img{
             border: 2px solid $light;
