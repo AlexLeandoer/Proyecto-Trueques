@@ -64,6 +64,15 @@ section#perfil .menu a { padding: 7px 12px 7px 17px; text-decoration: none; font
 section#perfil .menu a:hover { color: #A2CFFF; }
 section#perfil h3 { text-transform: uppercase; color: #32577F; font-weight: 400; margin-top: 20px; }
 section#perfil h3:after { width: 50px; height: 3px; background-color: #777B7F; margin-top: 10px; margin-bottom: 20px; content: ""; display: block; }
+section#perfil .profile { margin-bottom: 50px; }
+section#perfil .profile .fondo-profile { width: 100%; min-height: 200px; border-radius: 4px; background: url(http://placehold.it/1200x200) center center no-repeat/cover; display: flex; justify-content: center; align-items: center; }
+section#perfil .profile .fondo-profile img { margin-bottom: -195px; border: 3px solid #A2CFFF; border-radius: 35px; }
+section#perfil .profile .datos { margin-top: 6px; background-color: #A2CFFF; border-radius: 4px; min-height: 200px; display: flex; justify-content: center; align-items: center; flex-direction: space-around; text-align: center; }
+section#perfil .profile .datos h5 { color: #32577F; text-transform: uppercase; font-size: 1.1rem; font-weight: bold; }
+section#perfil .profile .datos .separadores { border-left: 1px solid #EEF6FF; border-right: 1px solid #EEF6FF; }
+section#perfil .profile .datos p { font-size: 2rem; color: #EEF6FF; font-weight: bolder; }
+section#perfil .profile .servicios { margin-top: 6px; background-color: #A2CFFF; border-radius: 4px; min-height: 180px; padding: 20px; display: flex; justify-content: center; align-items: center; flex-direction: space-around; text-align: center; }
+section#perfil .profile .servicios img { border: 3px #EEF6FF solid; border-radius: 4px; }
 
 /*Seccion pagina de servicio*/
 section#servicio { background: #EEF6FF; }

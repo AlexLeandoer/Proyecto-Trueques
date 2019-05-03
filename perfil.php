@@ -48,7 +48,19 @@
             <div class="col-md-8">
                 <h3>Mi cuenta</h3>
                 <div class="profile">
-                    
+                    <div class="fondo-profile">
+                        <img src="http://placehold.it/70x70" alt="">
+                    </div>
+                    <div class="datos">
+                        <div class="col-md-4"><h5>Pedidos</h5><p>N</p></div>
+                        <div class="col-md-4 separadores"><h5>Servicios</h5><p>N</p></div>
+                        <div class="col-md-4"><h5>Mensajes</h5><p>N</p></div>
+                    </div>
+                    <div class="servicios">
+                        <div class="col-md-4"><img src="http://placehold.it/200x200" alt=""></div>
+                        <div class="col-md-4 separadores"><img src="http://placehold.it/200x200" alt=""></div>
+                        <div class="col-md-4"><img src="http://placehold.it/200x200" alt=""></div>
+                    </div>
                 </div>
             </div>
         </div>
