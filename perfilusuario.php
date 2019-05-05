@@ -5,7 +5,7 @@
                 <img src="http://placehold.it/70x70" alt="">
             </div>
             <div class="nombre-user">
-                <h4 class="text-center">usuario</h4>
+                <!-- <h4 class="text-center">usuario</h4> -->
             </div>
             <div class="servicios">
                 <div class="col-md-4"><img src="http://placehold.it/200x200" alt=""></div>

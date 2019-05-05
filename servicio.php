@@ -1,7 +1,6 @@
-<?php include_once("header.php"); ?>
-<header id="header2">
+<!-- <header id="header2">
     <div class="logo">
-        logo<!-- <img src="img/logo.png" alt=""> -->
+        logo
     </div>
     <form class="form-inline d-flex justify-content-center buscador">
         <div class="icon-search">
@@ -13,7 +12,7 @@
         <a href="#">Login</a>
         <a href="#">Carrito</a>
     </div>
-</header>
+</header> -->
   <section id="servicio">
     <div class="container my-5">
         <div class="row"> 
@@ -29,7 +28,7 @@
                     <li>Consectetur</li>
                     <li>Adipisicing elit</li>
                 </ul>
-                <p class="user">Usuario: <a href="#">fulanito12</a></p>
+                <p class="user">Usuario: <a href="#"><img src="http://placehold.it/20x20" alt=""> fulanito12</a></p>
                 <button type="button" class="btn btn-dark btn-lg">Ofrecer intercambio</button>
             </div>
         </div>
@@ -50,4 +49,4 @@
         <hr>
     </div>
   </section>
-<?php include_once("footer.php"); ?>
+<!-- <?php include_once("footer.php"); ?> -->

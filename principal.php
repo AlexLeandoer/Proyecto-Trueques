@@ -1,7 +1,7 @@
 <?php include_once("header.php"); ?>
 <header id="header2">
     <div class="logo">
-        logo<!-- <img src="img/logo.png" alt=""> -->
+        <a href="index.php">logo</a><!-- <img src="img/logo.png" alt=""> -->
     </div>
     <form class="form-inline d-flex justify-content-center buscador">
         <div class="icon-search">
@@ -10,8 +10,8 @@
     </form>
 
     <div class="botones">
-        <a href="#">Login</a>
-        <a href="#">Carrito</a>
+        <a href="#">Login <img src="http://placehold.it/30x30" alt=""></a>
+        <a href="#">Carrito <img src="http://placehold.it/30x30" alt=""></a>
     </div>
 </header>
 
@@ -43,6 +43,7 @@
     <a href="#" id="home">Buscar</a>
     <a href="#" id="destacados">Destacados</a>
     <a href="#" id="perfil">Perfil usuario</a>
+    <a href="#" id="servicio">Servicio</a>
 </div>
 
 
@@ -60,6 +61,10 @@
         $("#perfil").click(function(e){
             e.preventDefault();
             $('#contenido').load("perfilusuario.php");
+        });
+        $("#servicio").click(function(e){
+            e.preventDefault();
+            $('#contenido').load("servicio.php");
         });
     });
 </script>

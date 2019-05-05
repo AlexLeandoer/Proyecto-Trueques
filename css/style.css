@@ -40,11 +40,11 @@ section#contacto button[type="submit"] { margin-top: 40px; padding: 20px 40px; }
 
 /* Navegacion lateral de categorias */
 section#categorias { background-color: #EEF6FF; }
-section#categorias ul { background: #fff; border-radius: 4px; width: 100%; padding: 20px; height: 700px; margin-top: -15px; z-index: -1 !important; box-shadow: 6px 0 10px rgba(0, 0, 0, 0.089), 0px 0px 0px rgba(0, 0, 0, 0.22); }
-section#categorias ul li { margin: 25px 20px; }
-section#categorias ul li a { color: #32577F !important; font-size: 1.2rem; }
-section#categorias ul li img { margin-right: 20px; }
 section#categorias #nav-left p { font-size: 1.15rem; text-align: center; background: #32577F; padding: 5px; border-radius: 4px; color: #EEF6FF; font-weight: 600; text-transform: uppercase; }
+section#categorias #nav-left ul.list-unstyled { background: #fff; border-radius: 4px; width: 100%; padding: 20px; height: 700px; margin-top: -15px; z-index: -1 !important; box-shadow: 6px 0 10px rgba(0, 0, 0, 0.089), 0px 0px 0px rgba(0, 0, 0, 0.22); }
+section#categorias #nav-left ul.list-unstyled li { margin: 25px 20px; }
+section#categorias #nav-left ul.list-unstyled li a { color: #32577F !important; font-size: 1.2rem; }
+section#categorias #nav-left ul.list-unstyled li img { margin-right: 20px; }
 
 /*Seccion destacados*/
 section#destacados h3 { text-transform: uppercase; color: #32577F; font-weight: 400; }
@@ -90,7 +90,7 @@ section#perfilotro .profile .opiniones .opinion { background-color: #EEF6FF; pad
 section#perfilotro .profile .opiniones .opinion .foto-perfil { border: 2px solid #A2CFFF; border-radius: 25px; margin-left: -10px; }
 section#perfilotro .profile .opiniones p { font-size: 2rem; color: #EEF6FF; font-weight: bolder; }
 section#perfilotro .profile .servicios { background-color: #A2CFFF; border-radius: 4px; min-height: 180px; padding: 20px; display: flex; justify-content: center; align-items: center; flex-direction: space-around; text-align: center; }
-section#perfilotro .profile .servicios img { border: 3px #EEF6FF solid; border-radius: 4px; }
+section#perfilotro .profile .servicios img { margin-top: 30px; border: 3px #EEF6FF solid; border-radius: 4px; }
 
 /*Seccion pagina de servicio*/
 section#servicio { background: #EEF6FF; }
@@ -117,12 +117,12 @@ div#busqueda .item_busqueda a.btn:hover { background: #192d42; box-shadow: 0 4px
 
 /*Header */
 header#header2 { width: 100%; background-color: #A2CFFF !important; padding: 20px; display: flex !important; justify-content: space-around; }
-
-form.buscador { background-color: #EEF6FF; padding: 0px 100px; border: 2px solid lightgrey; border-radius: 5px; font-family: "Roboto", sans-serif; }
-
-.icon-search:before { content: "\e986"; display: inline-block; flex-direction: start; }
-
-div.icon-search input { border: none; background-color: transparent; outline: 0 !important; }
+header#header2 form.buscador { background-color: #EEEEEE; padding: 0px 90px; border-radius: 5px; }
+header#header2 .icon-search:before { content: "\e986"; display: inline-block; flex-direction: start; color: #777B7F; font-size: 1.5rem; }
+header#header2 div.icon-search input { border: none; background-color: transparent; }
+header#header2 .form-control { font-family: "Roboto", sans-serif; font-size: 1.2rem; color: #777B7F; }
+header#header2 .form-control:focus, header#header2 .form-control:active { outline: none !important; box-shadow: none; }
+header#header2 .botones a { color: #32577F; font-size: 1.2rem; }
 
 /*Intercambios*/
 section#intercambio { background: #EEF6FF; }

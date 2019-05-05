@@ -1,5 +1,6 @@
 $primary:#A2CFFF;
 $grey: #777B7F;
+$grisclaro:#EEEEEE;
 $dark:#32577F;
 $light:#EEF6FF;
 $tipo:'Roboto', sans-serif;
@@ -142,24 +143,7 @@ section#contacto {
 /* Navegacion lateral de categorias */
 section#categorias{
     background-color: $light;
-    ul{
-        background: #fff;
-        border-radius: 4px;
-        width: 100%;
-        padding: 20px;
-        height: 700px;
-        margin-top:-15px;
-        z-index: -1 !important;
-        box-shadow: 6px 0 10px rgba(0, 0, 0, 0.089), 0px 0px 0px rgba(0,0,0,0.22);
-        li{
-            margin: 25px 20px;
-            a{color: $dark !important; font-size: 1.2rem;}
-            img{
-                margin-right: 20px;
-            }
-        }
-    }
-    #nav-left {
+    #nav-left{
         // padding: 20px;
         p{
             font-size: 1.15rem;
@@ -171,6 +155,23 @@ section#categorias{
             color:$light;
             font-weight: 600;
             text-transform: uppercase;
+        }
+        ul.list-unstyled{
+            background: #fff;
+            border-radius: 4px;
+            width: 100%;
+            padding: 20px;
+            height: 700px;
+            margin-top:-15px;
+            z-index: -1 !important; //no funciona
+            box-shadow: 6px 0 10px rgba(0, 0, 0, 0.089), 0px 0px 0px rgba(0,0,0,0.22);
+            li{
+                margin: 25px 20px;
+                a{color: $dark !important; font-size: 1.2rem;}
+                img{
+                    margin-right: 20px;
+                }
+            }
         }
     }
 }
@@ -408,7 +409,7 @@ section#perfilotro{
             padding: 20px;
             @include flexible(space-around, center);
             img{
-                // margin-top: 20px;
+                margin-top: 30px;
                 border: 3px $light solid;
                 border-radius: 4px;
             }
@@ -506,31 +507,47 @@ div#busqueda{
 
 /*Header */
 header#header2{
-   width: 100%;
-   background-color: $primary !important; 
-   padding: 20px;  
-   display: flex !important;
-   justify-content: space-around;
+    width: 100%;
+    background-color: $primary !important; 
+    padding: 20px;  
+    display: flex !important;
+    justify-content: space-around;
+    form.buscador{
+        background-color: $grisclaro;
+        padding: 0px 90px;
+        border-radius: 5px;
+    }
+    .icon-search:before {
+        content: "\e986";
+        display: inline-block;
+        flex-direction: start;
+        color: $grey;
+        font-size: 1.5rem;
+        
+    }
+
+    div.icon-search input{
+        border: none;
+        background-color: transparent;
+    }
+    .form-control{
+        font-family: $tipo;
+        font-size: 1.2rem;
+        color: $grey;
+        &:focus,&:active {
+            outline: none !important;
+            box-shadow: none;
+        }
+    }
+    .botones{
+        a{
+            color: $dark;
+            font-size: 1.2rem;
+        }
+    }
 }
 
-form.buscador{
-    background-color: $light;
-    padding: 0px 100px;
-    border: 2px solid lightgrey;
-    border-radius: 5px;
-    font-family: $tipo;
-}
-.icon-search:before {
-    content: "\e986";
-    display: inline-block;
-    flex-direction: start;
-}
 
-div.icon-search input{
-    border: none;
-    background-color: transparent;
-    outline:0 !important;
-}
 
 /*Intercambios*/
 section#intercambio{
