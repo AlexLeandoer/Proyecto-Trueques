@@ -78,7 +78,6 @@ header#header a.nav-item{
 /*Section banner*/
 section#banner{
     margin-top: 100px;
-
     .textobanner{
         margin-top: 120px;
         text-align: right;
@@ -99,6 +98,7 @@ section#banner{
         background: $dark;
         font-weight: bold;
         text-transform: uppercase;
+        border: none;
     }
 } 
 
@@ -148,6 +148,8 @@ section#categorias{
         width: 100%;
         padding: 20px;
         height: 700px;
+        margin-top:-15px;
+        z-index: -1 !important;
         box-shadow: 6px 0 10px rgba(0, 0, 0, 0.089), 0px 0px 0px rgba(0,0,0,0.22);
         li{
             margin: 25px 20px;
@@ -164,6 +166,8 @@ section#categorias{
             text-align: center;
             background: $dark;
             padding: 5px;
+            border-radius: 4px;
+            // z-index: 9999;
             color:$light;
             font-weight: 600;
             text-transform: uppercase;
@@ -307,6 +311,111 @@ section#perfil{
 
 }
 
+/*Perfil usuario*/
+section#perfilotro{
+    margin-top: 50px;
+    background-color: $light;
+    .menu {
+        height: 100%;
+        width: 200px;
+        background-color: $light;
+        overflow-x: hidden;
+        padding-top: 20px;
+        h4{
+            background-color: $primary;
+            text-transform: uppercase;
+            color: $dark;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 9px 8px 9px 16px; 
+            border-radius: 4px;
+        }
+        .enlaces{
+            background-color: #fff;
+            margin-top: -7px;
+        }
+        a{
+            padding: 7px 12px 7px 17px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: $dark;
+            display: block;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    .profile{
+        margin-bottom: 50px;
+        .fondo-profile{
+            width: 100%;
+            min-height: 180px;
+            border-radius: 4px;
+            margin-bottom: 6px;
+            background: url(http://placehold.it/1200x200) center center no-repeat / cover;
+            @include flexible(null, null);
+            img{
+                margin-bottom: -195px;
+                border: 3px solid $primary;
+                border-radius: 35px;
+            }
+        }
+        .opiniones{
+            margin-top: 6px;
+            background-color: $primary;
+            padding: 30px;
+            border-radius: 4px;
+            min-height: 200px;
+            @include flexible(space-around, center);
+            h4{
+                color: $dark;
+                text-transform: uppercase;
+                font-size: 1.1rem;
+                font-weight: bold;
+                text-align: center;
+            }
+            .opinion{
+                background-color: $light;
+                padding: 6px 25px;
+                margin: 10px;
+                border-radius: 4px;
+                @include flexible(null, null);
+                .foto-perfil{
+                    border: 2px solid $primary;
+                    border-radius: 25px;
+                    margin-left: -10px;
+                }
+                .rating{
+                    img{
+                        
+                    }
+                }
+            }
+            p{
+                font-size: 2rem;
+                color: $light;
+                font-weight: bolder;
+            }
+        }
+        .user{
+
+        }
+        .servicios{
+            background-color: $primary;
+            border-radius: 4px;
+            min-height: 180px;
+            padding: 20px;
+            @include flexible(space-around, center);
+            img{
+                // margin-top: 20px;
+                border: 3px $light solid;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
 /*Seccion pagina de servicio*/
 section#servicio{
     background: $light;
@@ -400,7 +509,7 @@ header#header2{
    width: 100%;
    background-color: $primary !important; 
    padding: 20px;  
-   display: flex !important;     
+   display: flex !important;
    justify-content: space-around;
 }
 

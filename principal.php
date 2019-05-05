@@ -41,7 +41,8 @@
 </section>
 <div class="col-md-4" id="navegacion">
     <a href="#" id="home">Buscar</a>
-    <a href="#" id="d">Destacados</a>
+    <a href="#" id="destacados">Destacados</a>
+    <a href="#" id="perfil">Perfil usuario</a>
 </div>
 
 
@@ -52,9 +53,13 @@
             e.preventDefault();
             $('#contenido').load("busqueda.php");
         });
-        $("#d").click(function(e){
+        $("#destacados").click(function(e){
             e.preventDefault();
             $('#contenido').load("destacados.php");
+        });
+        $("#perfil").click(function(e){
+            e.preventDefault();
+            $('#contenido').load("perfilusuario.php");
         });
     });
 </script>
