@@ -1,3 +1,12 @@
+<?php
+    require_once("conexion.php");
+
+    $consulta1 = $conexion->prepare("SELECT * FROM usuarios WHERE idUsuario = 2");
+    $consulta1->execute();
+    $resultado1 = $consulta1->fetch();
+    // var_dump($resultado1);
+?>
+
 <?php include_once("header.php"); ?>
 <header id="header2">
     <div class="logo">
@@ -10,7 +19,7 @@
     </form>
 
     <div class="botones">
-        <a href="#">Login <img src="http://placehold.it/30x30" alt=""></a>
+        <a href="perfil.php?id=<?= $resultado1['idUsuario']?>">Perfil <img src="img/avatars/<?php echo $resultado1['avatarUsuario']?>" alt=""></a>
         <a href="#">Carrito <img src="http://placehold.it/30x30" alt=""></a>
     </div>
 </header>

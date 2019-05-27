@@ -1,3 +1,20 @@
+<?php
+    require_once("conexion.php");
+
+    // if(!isset($_GET['id'])){
+    //     header("location:index.php");
+    // }
+    $id = $_GET['id'];
+    $consulta = "SELECT * FROM usuarios WHERE idUsuario = ?";
+    $sentencia = $conexion->prepare($consulta);
+    $sentencia->execute([$id]);
+    $resultado = $sentencia->fetch();
+    // if($resultado == 0){
+    //     header("location:index.php");
+    // }
+    
+?>
+
 <?php include_once("header.php"); ?>
 <header id="header2">
     <div class="logo">
@@ -46,10 +63,10 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <h3>Mi cuenta</h3>
+                <h3>Mi cuenta - Bienvenido <?php echo $resultado['nombreUsuario']?></h3>
                 <div class="profile">
                     <div class="fondo-profile">
-                        <img src="http://placehold.it/70x70" alt="">
+                        <img src="img/avatars/<?php echo $resultado['avatarUsuario']?>" alt="Foto del usuario">
                     </div>
                     <div class="datos">
                         <div class="col-md-4"><h5>Pedidos</h5><p>N</p></div>
