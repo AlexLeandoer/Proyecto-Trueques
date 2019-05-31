@@ -1,7 +1,18 @@
 <?php 
     $mensaje = "";
+    include "conexion.php";
+
+    session_start();
+
+    if(isset($_COOKIE["Sesión"])){
+        session_decode($_COOKIE["Sesión"]);
+    }
+
+    if(!isset($_SESSION["id_usuario"])){
+        header("location:login.php");
+    }
+    
     if($_POST){
-        require_once("conexion.php");
         $tituloServicio = $_POST['tituloServicio'];
         $descripcionServicio  = $_POST['descripcionServicio'];
         $fotoServicio = $_FILES['fotoServicio'];

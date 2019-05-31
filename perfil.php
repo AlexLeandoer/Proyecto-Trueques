@@ -1,18 +1,21 @@
 <?php
-    require_once("conexion.php");
+    include("conexion.php");
+    session_start();
 
-    // if(!isset($_GET['id'])){
-    //     header("location:index.php");
-    // }
+    if(isset($_COOKIE["Sesión"])){
+        session_decode($_COOKIE["Sesión"]);
+    }
+
+    if(!isset($_SESSION["id_usuario"])){
+        header("location:login.php");
+    }
+
     $id = $_GET['id'];
     $consulta = "SELECT * FROM usuarios WHERE idUsuario = ?";
     $sentencia = $conexion->prepare($consulta);
     $sentencia->execute([$id]);
     $resultado = $sentencia->fetch();
-    // if($resultado == 0){
-    //     header("location:index.php");
-    // }
-    
+
 ?>
 
 <?php include_once("header.php"); ?>
@@ -27,7 +30,9 @@
     </form>
 
     <div class="botones">
-        <a href="#">Login</a>
+    <form action="#" method="POST">
+        <input type="submit" value="Cerrar sesión" name="cerrar">
+    </form>
         <a href="#">Carrito</a>
     </div>
 </header>

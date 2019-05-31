@@ -1,10 +1,16 @@
 <?php
     require_once("conexion.php");
 
+    //Para el usuario
     $consulta1 = $conexion->prepare("SELECT * FROM usuarios WHERE idUsuario = 2");
     $consulta1->execute();
     $resultado1 = $consulta1->fetch();
-    // var_dump($resultado1);
+
+    //Para cargar las categorias
+    $consulta2 = $conexion->prepare("SELECT * FROM servicios");
+    $consulta2->execute();
+    $resultado2 = $consulta2->fetchAll();
+
 ?>
 
 <?php include_once("header.php"); ?>
@@ -30,16 +36,16 @@
             <div class="col-md-3 col-sm-10" id="nav-left">
                 <p>Todas las categorías</p>
                 <ul class="list-unstyled">
-                    <li><img src="http://placehold.it/30x30" alt=""><a href="#">Informática</a></li>
-                    <li><img src="http://placehold.it/30x30" alt=""><a href="#">Electrónica</a></li>
-                    <li><img src="http://placehold.it/30x30" alt=""><a href="#">Telefonía</a></li>
-                    <li><img src="http://placehold.it/30x30" alt=""><a href="#">Propuestas</a></li>
-                    <li><img src="http://placehold.it/30x30" alt=""><a href="#">Cocina</a></li>
-                    <li><img src="http://placehold.it/30x30" alt=""><a href="#">Diseño</a></li>
-                    <li><img src="http://placehold.it/30x30" alt=""><a href="#">Eventos</a></li>
-                    <li><img src="http://placehold.it/30x30" alt=""><a href="#">Otros</a></li>
+                    <li><img src="http://placehold.it/30x30" alt=""><a href="#" onClick="$('#contenido').load('busqueda.php?nombre_categoria=informatica')">Informática</a></li>
+                    <li><img src="http://placehold.it/30x30" alt=""><a href="#" onClick="$('#contenido').load('busqueda.php?nombre_categoria=electronica')">Electrónica</a></li>
+                    <li><img src="http://placehold.it/30x30" alt=""><a href="#" onClick="$('#contenido').load('busqueda.php?nombre_categoria=telefonia')">Telefonía</a></li>
+                    <li><img src="http://placehold.it/30x30" alt=""><a href="#" onClick="$('#contenido').load('busqueda.php?nombre_categoria=propuestas')">Propuestas</a></li>
+                    <li><img src="http://placehold.it/30x30" alt=""><a href="#" onClick="$('#contenido').load('busqueda.php?nombre_categoria=cocina')">Cocina</a></li>
+                    <li><img src="http://placehold.it/30x30" alt=""><a href="#" onClick="$('#contenido').load('busqueda.php?nombre_categoria=diseño')">Diseño</a></li>
+                    <li><img src="http://placehold.it/30x30" alt=""><a href="#" onClick="$('#contenido').load('busqueda.php?nombre_categoria=eventos')">Eventos</a></li>
+                    <li><img src="http://placehold.it/30x30" alt=""><a href="#" onClick="$('#contenido').load('busqueda.php?nombre_categoria=otros')">Otros</a></li>
                 </ul>
-            </div>         
+            </div>       
             <div class="col-md-9" id="contenido">
         
             </div>
@@ -59,10 +65,6 @@
 <?php include_once("footer.php"); ?>
 <script>
     $(function(){
-        $("#home").click(function(e){
-            e.preventDefault();
-            $('#contenido').load("busqueda.php");
-        });
         $("#destacados").click(function(e){
             e.preventDefault();
             $('#contenido').load("destacados.php");
