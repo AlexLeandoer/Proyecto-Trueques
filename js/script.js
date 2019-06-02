@@ -7,3 +7,7 @@ $(function(){
         }
     });
 });
+
+$(function cargarServicio(id){
+    $('#contenido').load('servicio.php?idServicio' + id);
+});

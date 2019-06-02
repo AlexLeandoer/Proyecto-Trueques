@@ -2,19 +2,20 @@
     $mensaje = "";
     include "conexion.php";
 
-    session_start();
+    // session_start();
 
-    if(isset($_COOKIE["Sesión"])){
-        session_decode($_COOKIE["Sesión"]);
-    }
+    // if(isset($_COOKIE["Sesión"])){
+    //     session_decode($_COOKIE["Sesión"]);
+    // }
 
-    if(!isset($_SESSION["id_usuario"])){
-        header("location:login.php");
-    }
+    // if(!isset($_SESSION["idUsuario"])){
+    //     header("location:login.php");
+    // }
     
     if($_POST){
         $tituloServicio = $_POST['tituloServicio'];
         $descripcionServicio  = $_POST['descripcionServicio'];
+        $nombre_categoria  = $_POST['nombre_categoria'];
         $fotoServicio = $_FILES['fotoServicio'];
 
         $nombreAvatar = $fotoServicio["name"];
@@ -26,10 +27,10 @@
         $sentencia1->execute([$descripcionServicio]);
         $resultado1 = $sentencia1->fetch();
 
-        $consulta2 = "INSERT INTO servicios (tituloServicio, descripcionServicio, fotoServicio) VALUES (?,?,?)";
+        $consulta2 = "INSERT INTO servicios (tituloServicio, descripcionServicio, fotoServicio, nombre_categoria) VALUES (?,?,?,?)";
 
         $sentencia2=$conexion->prepare($consulta2);
-        $resultado2 = $sentencia2->execute([$tituloServicio,$descripcionServicio,$nombreAvatar]);
+        $resultado2 = $sentencia2->execute([$tituloServicio,$descripcionServicio,$nombreAvatar,$nombre_categoria]);
 
         if($resultado2){
             move_uploaded_file($temporal,$ruta);
@@ -64,8 +65,10 @@
             <form action="#" method="post" enctype="multipart/form-data">
                 <input type="text" class="form-control mb-4 p-4" name="tituloServicio" placeholder="Nombre del servicio" required>
 
-                <textarea name="descripcionServicio" id="" cols="54" placeholder="Descripcion del servicio" rows="5"  class="form-control"></textarea>
-                    
+                <textarea name="descripcionServicio" id="" cols="54" placeholder="Descripcion del servicio" rows="5"  class="form-control mb-4 p-4"></textarea>
+                
+                <input type="text" class="form-control mb-4 p-4" name="nombre_categoria" placeholder="Categoria del servicio" required>
+
                 <label for="fotoServicio" class="btn btn-danger  px-5 py-3 mt-2">Subir foto</label>
 
                 <input type="file" class="d-none" name="fotoServicio" placeholder="Foto servicio" required id="fotoServicio">

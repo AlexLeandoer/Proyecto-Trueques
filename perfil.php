@@ -6,7 +6,7 @@
         session_decode($_COOKIE["Sesión"]);
     }
 
-    if(!isset($_SESSION["id_usuario"])){
+    if(!isset($_SESSION["idUsuario"])){
         header("location:login.php");
     }
 

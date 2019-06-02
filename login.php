@@ -7,12 +7,12 @@
         session_decode($_COOKIE["Sesión"]);
     }
 
-    if(isset($_SESSION["id_usuario"])){
+    if(isset($_SESSION["idUsuario"])){
         header("location:principal.php");
     }
 
     if(isset($_POST["envio"])){
-        if(empty($_POST["email"]) || empty($_POST["contraseña"])){
+        if(empty($_POST["email"]) || empty($_POST["contrasena"])){
             echo "<p>No se pueden dejar campos vacíos.</p>";
         }
         else{
@@ -23,14 +23,14 @@
                 echo "<p>No existe un usuario con ese correo electrónico registrado.</p>";
                 die;
             }
-            if(password_verify($_POST["contraseña"], $usuario["passUsuario"]) == true){
-                $_SESSION["id_usuario"] = $usuario["id_usuario"];
+            if(password_verify($_POST["contrasena"], $usuario["passUsuario"]) == true){
+                $_SESSION["idUsuario"] = $usuario["idUsuario"];
                 $_SESSION["nombre_usuario"] = $usuario["nombre_usuario"];
                 if(isset($_POST["sesion"])){
                     $_SESSION["mantener"] = true;
                     setcookie("Sesión", session_encode(), time() + 86400, "/");
                 }
-                header("location:panel_usuario.php");
+                header("location:perfil.php");
             }
             else{
                 echo "<p>Contraseña incorrecta.</p>";
@@ -61,7 +61,7 @@
         <div class="row">
             <div class="col-md-8">
                 <h2>Login</h2>
-                <h2><a href="#" id="registro_btn">Registro</a></h2>
+                <h2><a href="registro.php">Registro</a></h2>
                 <form id="contenido_form">
                     <div class="form-group">
                         <label for="email">Correo electrónico</label>
@@ -82,11 +82,3 @@
     </section>  
 
 <?php include_once("footer.php"); ?>
-<script>
-    $(function(){
-        $("#registro_btn").click(function(e){
-            e.preventDefault();
-            $('#contenido_form').load("registro.html");
-        });
-    });
-</script>

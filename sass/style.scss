@@ -543,6 +543,10 @@ header#header2{
         a{
             color: $dark;
             font-size: 1.2rem;
+            img:nth-child(1){
+                max-width: 25%;
+                max-height: 25%;
+            }
         }
     }
 }

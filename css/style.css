@@ -123,6 +123,7 @@ header#header2 div.icon-search input { border: none; background-color: transpare
 header#header2 .form-control { font-family: "Roboto", sans-serif; font-size: 1.2rem; color: #777B7F; }
 header#header2 .form-control:focus, header#header2 .form-control:active { outline: none !important; box-shadow: none; }
 header#header2 .botones a { color: #32577F; font-size: 1.2rem; }
+header#header2 .botones a img:nth-child(1) { max-width: 25%; max-height: 25%; }
 
 /*Intercambios*/
 section#intercambio { background: #EEF6FF; }

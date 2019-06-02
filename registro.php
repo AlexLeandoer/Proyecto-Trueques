@@ -1,42 +1,69 @@
 <?php
     include "conexion.php";
 
-    session_start();
+    // session_start();
 
-    if(isset($_COOKIE["Sesión"])){
-        session_decode($_COOKIE["Sesión"]);
-    }
+    // if(isset($_COOKIE["Sesión"])){
+    //     session_decode($_COOKIE["Sesión"]);
+    // }
 
-    if(isset($_SESSION["id_usuario"])){
-        header("location:principal.php");
-    }
+    // if(isset($_SESSION["idUsuario"])){
+    //     header("location:principal.php");
+    // }
 
     if(isset($_POST["envio"])){
-        if(empty($_POST["nombre_usuario"]) || empty($_POST["email"]) || empty($_POST["contraseña"])){
+        if(empty($_POST["nombreUsuario"]) || empty($_POST["loginUsuario"]) || empty($_POST["passUsuario"])){
             echo "<p>No se pueden dejar campos vacíos.</p>";
         }
         else{
-            $contraseña_encriptada = password_hash($_POST["contraseña"], PASSWORD_DEFAULT);
-            $consulta = $dbh->prepare("INSERT INTO usuarios (id_usuario, email, nombre_usuario, contraseña) VALUES (NULL, ?, ?, ?)");
-            $consulta->execute([$_POST["email"], $_POST["nombre_usuario"], $contraseña_encriptada]);
+            $contraseña_encriptada = password_hash($_POST["passUsuario"], PASSWORD_DEFAULT);
+            $consulta = $dbh->prepare("INSERT INTO usuarios (idUsuario, nombreUsuario, loginUsuario, passUsuario, avatarUsuario) VALUES (NULL, ?, ?, ?, NULL)");
+            $consulta->execute([$_POST["loginUsuario"], $_POST["nombreUsuario"], $contraseña_encriptada]);
             $resultado = $consulta->rowCount();
         }
     }
 ?>
+<?php include_once("header.php"); ?>
 
-<div class="form-group">
-    <label for="nombre_usuario">Nombre</label>
-    <input type="text" name="nombre_usuario" placeholder="Nombre de usuario">
-</div>
-<div class="form-group">
-    <label for="exampleInputEmail1">Correo electrónico</label>
-    <input type="email" name="email" placeholder="Correo electrónico">
-</div>
-<div class="form-group">
-    <label for="exampleInputPassword1">Contraseña</label>
-    <input type="password" name="contraseña" placeholder="Contraseña">
-</div>
-<button type="submit" class="btn btn-primary" name="envio">Registrarse</button>
+<header id="header2">
+    <div class="logo">
+        logo<!-- <img src="img/logo.png" alt=""> -->
+    </div>
+    <form class="form-inline d-flex justify-content-center buscador">
+        <div class="icon-search">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </div>
+    </form>
+
+    <div class="botones">
+        <a href="login.php">Login</a>
+        <a href="#">Carrito</a>
+    </div>
+</header>
+
+<section id="login" class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Registro</h2>
+            <form id="contenido_form">
+                <div class="form-group">
+                    <label for="nombreUsuario">Nombre</label>
+                    <input type="text" name="nombreUsuario" placeholder="Nombre de usuario">
+                </div>
+                <div class="form-group">
+                    <label for="loginUsuario">Correo electrónico</label>
+                    <input type="email" name="loginUsuario" placeholder="Correo electrónico">
+                </div>
+                <div class="form-group">
+                    <label for="passUsuario">Contraseña</label>
+                    <input type="password" name="passUsuario" placeholder="Contraseña">
+                </div>
+                <button type="submit" class="btn btn-primary" name="envio">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</section>
+
 <?php
     if(!empty($resultado)){
         if($resultado != 0){
@@ -47,3 +74,4 @@
         }
     }
 ?>
+<?php include_once("footer.php"); ?>

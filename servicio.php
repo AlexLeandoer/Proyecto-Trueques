@@ -1,33 +1,32 @@
-<!-- <header id="header2">
-    <div class="logo">
-        logo
-    </div>
-    <form class="form-inline d-flex justify-content-center buscador">
-        <div class="icon-search">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
-        </div>
-    </form>
+<?php
+    require_once("conexion.php");
 
-    <div class="botones">
-        <a href="#">Login</a>
-        <a href="#">Carrito</a>
-    </div>
-</header> -->
+    if(!isset($_GET['idServicio'])){
+        header("location:principal.php");
+    }
+    $idServicio = $_GET['idServicio'];
+    $consulta = "SELECT * FROM servicios WHERE idServicio = ?";
+    $sentencia = $conexion->prepare($consulta);
+    $sentencia->execute([$idServicio]);
+    $resultado = $sentencia->fetch();
+    
+?>
   <section id="servicio">
     <div class="container my-5">
         <div class="row"> 
             <div class="col-md-7">
-                <img src="http://placehold.it/750x500" alt="">
+                <img src="img/services/<?php echo $resultado['fotoServicio']?>" alt="">
+                <!-- <img src="http://placehold.it/750x500" alt=""> -->
             </div>
             <div class="col-md-5" id="descripcion">
-                <h3>Titulo de servicio</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, rerum eum, tempora amet illo accusantium impedit quidem atque sunt reiciendis suscipit hic dolorem molestias similique quos minima ipsam soluta, expedita ut ad explicabo accusamus distinctio architecto! Quasi distinctio totam culpa?</p>
-                <ul>
+                <h3><?php echo $resultado['tituloServicio']?></h3>
+                <p><?php echo $resultado['descripcionServicio']?></p>
+                <!-- <ul>
                     <li>Lorem, ipsum.</li>
                     <li>Dolor sit amet</li>
                     <li>Consectetur</li>
                     <li>Adipisicing elit</li>
-                </ul>
+                </ul> -->
                 <p class="user">Usuario: <a href="#"><img src="http://placehold.it/20x20" alt=""> fulanito12</a></p>
                 <button type="button" class="btn btn-dark btn-lg">Ofrecer intercambio</button>
             </div>

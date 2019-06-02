@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="icons/icons.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
+    <script type="text/javascript" src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>">
     <script>
         window.cookieconsent_options = {

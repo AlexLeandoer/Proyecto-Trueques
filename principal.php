@@ -2,7 +2,7 @@
     require_once("conexion.php");
 
     //Para el usuario
-    $consulta1 = $conexion->prepare("SELECT * FROM usuarios WHERE idUsuario = 2");
+    $consulta1 = $conexion->prepare("SELECT * FROM usuarios WHERE idUsuario = 1");
     $consulta1->execute();
     $resultado1 = $consulta1->fetch();
 
@@ -25,7 +25,7 @@
     </form>
 
     <div class="botones">
-        <a href="perfil.php?id=<?= $resultado1['idUsuario']?>">Perfil <img src="img/avatars/<?php echo $resultado1['avatarUsuario']?>" alt=""></a>
+        <a class="user-image rounded-circle" href="perfil.php?id=<?= $resultado1['idUsuario']?>">Perfil <img src="img/avatars/<?php echo $resultado1['avatarUsuario']?>" class="rounded-circle" alt=""></a>
         <a href="#">Carrito <img src="http://placehold.it/30x30" alt=""></a>
     </div>
 </header>
@@ -55,7 +55,6 @@
     <!-- fin container -->
 </section>
 <div class="col-md-4" id="navegacion">
-    <a href="#" id="home">Buscar</a>
     <a href="#" id="destacados">Destacados</a>
     <a href="#" id="perfil">Perfil usuario</a>
     <a href="#" id="servicio">Servicio</a>
@@ -77,5 +76,8 @@
             e.preventDefault();
             $('#contenido').load("servicio.php");
         });
+        
     });
+    
+    
 </script>
