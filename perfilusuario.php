@@ -1,3 +1,17 @@
+<?php
+    require_once("conexion.php");
+
+    if(!isset($_GET['idUsuario'])){
+        header("location:principal.php");
+    }
+    $idUsuario = $_GET['idUsuario'];
+    $consulta = "SELECT * FROM usuarios WHERE idUsuario = ?";
+    $sentencia = $conexion->prepare($consulta);
+    $sentencia->execute([$idUsuario]);
+    $resultado = $sentencia->fetch();
+    
+?>
+
 <section id="perfilotro">
     <div class="col-md-12">
         <div class="profile">
@@ -5,7 +19,7 @@
                 <img src="http://placehold.it/70x70" alt="">
             </div>
             <div class="nombre-user">
-                <!-- <h4 class="text-center">usuario</h4> -->
+                <h4 class="text-center"><?php $resultado['nombreUsuario'] ?></h4>
             </div>
             <div class="servicios">
                 <div class="col-md-4"><img src="http://placehold.it/200x200" alt=""></div>

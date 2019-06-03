@@ -23,8 +23,15 @@
         <div class="col-md-8">
             <h4><?php echo $fila['tituloServicio']?> <img src="http://placehold.it/20x20" alt=""></h4>
             <p><?php echo $fila['descripcionServicio']?></p>
+            <?php 
+                 $id_servicio = $fila['idServicio'];
+                 $consulta2 = "SELECT * FROM usuarios_con_servicios WHERE id_servicio = ?";
+                 $sentencia2 = $conexion->prepare($consulta2);
+                 $sentencia2->execute([$id_servicio]);
+                 $resultado2 = $sentencia2->fetch();
+            ?>
             <p class="user">Usuario: <img src="http://placehold.it/20x20" alt="">
-            <a href="#">fulanito1</a>
+            <a href="usuario.php?idUsuario=<?php $resultado2['id_usuario'] ?>">fulanito1</a>
             <a href="#" onclick="$('#contenido').load('servicio.php?idServicio=<?= $fila['idServicio']?>')" class="btn btn-primary">Leer más</a></p>
         </div>
     </div>
