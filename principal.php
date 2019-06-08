@@ -1,9 +1,19 @@
 <?php
-    require_once("conexion.php");
+    include "conexion.php";
+
+    session_start();
+
+    if(isset($_COOKIE["Sesión"])){
+        session_decode($_COOKIE["Sesión"]);
+    }
+
+    if(!isset($_SESSION["idUsuario"])){
+        header("location:login.php");
+    }
 
     //Para el usuario
-    $consulta1 = $conexion->prepare("SELECT * FROM usuarios WHERE idUsuario = 1");
-    $consulta1->execute();
+    $consulta1 = $conexion->prepare("SELECT * FROM usuarios WHERE idUsuario = ?");
+    $consulta1->execute([$_SESSION["idUsuario"]]);
     $resultado1 = $consulta1->fetch();
 
     //Para cargar las categorias

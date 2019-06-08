@@ -10,11 +10,34 @@
         header("location:login.php");
     }
 
-    $id = $_GET['id'];
-    $consulta = "SELECT * FROM usuarios WHERE idUsuario = ?";
-    $sentencia = $conexion->prepare($consulta);
-    $sentencia->execute([$id]);
-    $resultado = $sentencia->fetch();
+    if(empty($_GET['idUsuario'])){
+        //Si viene del login
+        $idUsuario = $_SESSION['idUsuario'];
+        $consulta2 = "SELECT * FROM usuarios WHERE idUsuario = ?";
+        $sentencia2 = $conexion->prepare($consulta2);
+        $sentencia2->execute([$idUsuario]);
+        $resultado2 = $sentencia2->fetch();
+    }
+    else{
+        $id = $_GET['idUsuario'];
+        $consulta = "SELECT * FROM usuarios WHERE idUsuario = ?";
+        $sentencia = $conexion->prepare($consulta);
+        $sentencia->execute([$idUsuario]);
+        $resultado = $sentencia->fetch();
+    }
+    
+
+
+
+    if(isset($_POST["cerrar"])){
+        session_destroy();
+        unset($_SESSION);
+        if(isset($_COOKIE["Sesión"])){
+            setcookie("Sesión", "", time() - 3600, "/");
+            unset($_COOKIE);
+        }
+        header("location:login.php");
+    }
 
 ?>
 
@@ -68,10 +91,10 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <h3>Mi cuenta - Bienvenido <?php echo $resultado['nombreUsuario']?></h3>
+                <h3>Mi cuenta - Bienvenido <?php echo $resultado2['nombreUsuario']?></h3>
                 <div class="profile">
                     <div class="fondo-profile">
-                        <img src="img/avatars/<?php echo $resultado['avatarUsuario']?>" alt="Foto del usuario">
+                        <img src="img/avatars/<?php echo $resultado2['avatarUsuario']?>" alt="Foto del usuario">
                     </div>
                     <div class="datos">
                         <div class="col-md-4"><h5>Pedidos</h5><p>N</p></div>

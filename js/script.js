@@ -1,3 +1,5 @@
+JQuery.noConflict();
+
 $(function(){
     var tope = $("section#testimonios").offset().top;
     $(window).scroll(function(){
