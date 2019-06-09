@@ -29,21 +29,24 @@ img{
     min-height: 100vh;
 }
 
-nav.navbar{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 25px 180px;
-    background-color: $primary;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    z-index: 9999;
-    border: none;
+header#header{
+    nav.navbar{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 25px 180px;
+        background-color: $primary;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        z-index: 9999;
+        border: none;
+    }
+    
+    /* borde navbar */
+    .navbar-toggler{
+        border: none !important;
+    }
 }
 
-/* borde navbar */
-.navbar-toggler{
-    border: none !important;
-}
 
 @media screen and (max-width:767px){
     nav.navbar{  
@@ -144,7 +147,13 @@ section#contacto {
 section#categorias{
     background-color: $light;
     #nav-left{
-        // padding: 20px;
+        margin-left: -100px;
+        li{
+            img{
+                max-height: 20%;
+                max-width: 20%;
+            }
+        }
         p{
             font-size: 1.15rem;
             text-align: center;
@@ -262,6 +271,11 @@ section#perfil{
 
     .profile{
         margin-bottom: 50px;
+        form{
+            input{
+                padding: 20px;
+            }
+        }
         .fondo-profile{
             width: 100%;
             min-height: 200px;
@@ -269,9 +283,9 @@ section#perfil{
             background: url(http://placehold.it/1200x200) center center no-repeat / cover;
             @include flexible(null, null);
             img{
-                margin-bottom: -195px;
-                border: 3px solid $primary;
-                border-radius: 35px;
+                margin-bottom: -185px;
+                max-height: 15%;
+                max-width: 15%;
             }
         }
         .datos{
@@ -309,6 +323,7 @@ section#perfil{
             }
         }
     }
+
 
 }
 
@@ -424,6 +439,7 @@ section#servicio{
         max-width: 100%;
     }
     button{
+        margin-top: 70px;
         background: $dark;
         font-weight: 500;
         color: $light;
@@ -455,6 +471,10 @@ section#servicio{
         ul{
             color: $grey;
         }
+        img{
+            max-height: 11%;
+            max-width: 11%;
+        }
     }
 }
 
@@ -466,12 +486,14 @@ div#busqueda{
         background-color: white;
         border-radius: 3px;
         box-shadow: 0 0px 1px rgba(0,0,0,0.12), 0 0px 5px rgba(0,0,0,0.24);
-        img{
-            border: 2px solid $light;
-        }
+
         h4{
             color: $dark;
             font-weight: 600;
+            img{
+                max-height: 5%;
+                max-width: 5%;
+            }
         }
         p{
             color: $grey;
@@ -507,48 +529,27 @@ div#busqueda{
 
 /*Header */
 header#header2{
-    width: 100%;
-    background-color: $primary !important; 
-    padding: 20px;  
-    display: flex !important;
-    justify-content: space-around;
-    form.buscador{
-        background-color: $grisclaro;
-        padding: 0px 90px;
-        border-radius: 5px;
-    }
-    .icon-search:before {
-        content: "\e986";
-        display: inline-block;
-        flex-direction: start;
-        color: $grey;
-        font-size: 1.5rem;
-        
-    }
+    background-color: $primary;
+    max-width: 100%;
 
-    div.icon-search input{
-        border: none;
-        background-color: transparent;
-    }
-    .form-control{
-        font-family: $tipo;
-        font-size: 1.2rem;
-        color: $grey;
-        &:focus,&:active {
-            outline: none !important;
-            box-shadow: none;
+    .navbar{
+        background-color: $primary !important;
+        min-height: 100px;
+        .buscador{
         }
     }
-    .botones{
+    ul{
+        
         a{
             color: $dark;
             font-size: 1.2rem;
-            img:nth-child(1){
-                max-width: 25%;
-                max-height: 25%;
+            img{
+                max-height: 15%;
+                max-width: 15%;
             }
         }
     }
+    
 }
 
 

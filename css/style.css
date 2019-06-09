@@ -2,10 +2,9 @@ body, html { font-family: "Roboto", sans-serif; font-size: 15px; }
 
 img { max-width: 100%; }
 
-nav.navbar { position: fixed; top: 0; width: 100%; padding: 25px 180px; background-color: #A2CFFF; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); z-index: 9999; border: none; }
-
-/* borde navbar */
-.navbar-toggler { border: none !important; }
+header#header { /* borde navbar */ }
+header#header nav.navbar { position: fixed; top: 0; width: 100%; padding: 25px 180px; background-color: #A2CFFF; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); z-index: 9999; border: none; }
+header#header .navbar-toggler { border: none !important; }
 
 @media screen and (max-width: 767px) { nav.navbar { padding: 25px 5px; }
   section#servicios { margin-top: 200px; }
@@ -40,6 +39,8 @@ section#contacto button[type="submit"] { margin-top: 40px; padding: 20px 40px; }
 
 /* Navegacion lateral de categorias */
 section#categorias { background-color: #EEF6FF; }
+section#categorias #nav-left { margin-left: -100px; }
+section#categorias #nav-left li img { max-height: 20%; max-width: 20%; }
 section#categorias #nav-left p { font-size: 1.15rem; text-align: center; background: #32577F; padding: 5px; border-radius: 4px; color: #EEF6FF; font-weight: 600; text-transform: uppercase; }
 section#categorias #nav-left ul.list-unstyled { background: #fff; border-radius: 4px; width: 100%; padding: 20px; height: 700px; margin-top: -15px; z-index: -1 !important; box-shadow: 6px 0 10px rgba(0, 0, 0, 0.089), 0px 0px 0px rgba(0, 0, 0, 0.22); }
 section#categorias #nav-left ul.list-unstyled li { margin: 25px 20px; }
@@ -65,8 +66,9 @@ section#perfil .menu a:hover { color: #A2CFFF; }
 section#perfil h3 { text-transform: uppercase; color: #32577F; font-weight: 400; margin-top: 20px; }
 section#perfil h3:after { width: 50px; height: 3px; background-color: #777B7F; margin-top: 10px; margin-bottom: 20px; content: ""; display: block; }
 section#perfil .profile { margin-bottom: 50px; }
+section#perfil .profile form input { padding: 20px; }
 section#perfil .profile .fondo-profile { width: 100%; min-height: 200px; border-radius: 4px; background: url(http://placehold.it/1200x200) center center no-repeat/cover; display: flex; justify-content: center; align-items: center; }
-section#perfil .profile .fondo-profile img { margin-bottom: -195px; border: 3px solid #A2CFFF; border-radius: 35px; }
+section#perfil .profile .fondo-profile img { margin-bottom: -185px; max-height: 15%; max-width: 15%; }
 section#perfil .profile .datos { margin-top: 6px; background-color: #A2CFFF; border-radius: 4px; min-height: 200px; display: flex; justify-content: center; align-items: center; flex-direction: space-around; text-align: center; }
 section#perfil .profile .datos h5 { color: #32577F; text-transform: uppercase; font-size: 1.1rem; font-weight: bold; }
 section#perfil .profile .datos .separadores { border-left: 1px solid #EEF6FF; border-right: 1px solid #EEF6FF; }
@@ -95,18 +97,19 @@ section#perfilotro .profile .servicios img { margin-top: 30px; border: 3px #EEF6
 /*Seccion pagina de servicio*/
 section#servicio { background: #EEF6FF; }
 section#servicio img { max-width: 100%; }
-section#servicio button { background: #32577F; font-weight: 500; color: #EEF6FF; text-transform: uppercase; border: none; padding: 15px; }
+section#servicio button { margin-top: 70px; background: #32577F; font-weight: 500; color: #EEF6FF; text-transform: uppercase; border: none; padding: 15px; }
 section#servicio button:hover { background: #192d42; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 section#servicio h3 { color: #32577F; text-transform: uppercase; font-weight: 600; font-size: 1.5rem; }
 section#servicio #descripcion { background: #fff; padding: 20px; }
 section#servicio #descripcion p { color: #777B7F; }
 section#servicio #descripcion .user { color: #32577F; font-weight: 600; font-size: 1.2rem; }
 section#servicio #descripcion ul { color: #777B7F; }
+section#servicio #descripcion img { max-height: 11%; max-width: 11%; }
 
 /*Pagina de busqueda de servicio*/
 div#busqueda .item_busqueda { padding: 3px 10px; margin: 20px; background-color: white; border-radius: 3px; box-shadow: 0 0px 1px rgba(0, 0, 0, 0.12), 0 0px 5px rgba(0, 0, 0, 0.24); }
-div#busqueda .item_busqueda img { border: 2px solid #EEF6FF; }
 div#busqueda .item_busqueda h4 { color: #32577F; font-weight: 600; }
+div#busqueda .item_busqueda h4 img { max-height: 5%; max-width: 5%; }
 div#busqueda .item_busqueda p { color: #777B7F; }
 div#busqueda .item_busqueda p a.btn { margin-left: 50px; }
 div#busqueda .item_busqueda .user { margin-top: 30px; color: #32577F; font-size: 1.3rem; }
@@ -116,14 +119,10 @@ div#busqueda .item_busqueda a.btn { background: #32577F; font-weight: 300; color
 div#busqueda .item_busqueda a.btn:hover { background: #192d42; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 /*Header */
-header#header2 { width: 100%; background-color: #A2CFFF !important; padding: 20px; display: flex !important; justify-content: space-around; }
-header#header2 form.buscador { background-color: #EEEEEE; padding: 0px 90px; border-radius: 5px; }
-header#header2 .icon-search:before { content: "\e986"; display: inline-block; flex-direction: start; color: #777B7F; font-size: 1.5rem; }
-header#header2 div.icon-search input { border: none; background-color: transparent; }
-header#header2 .form-control { font-family: "Roboto", sans-serif; font-size: 1.2rem; color: #777B7F; }
-header#header2 .form-control:focus, header#header2 .form-control:active { outline: none !important; box-shadow: none; }
-header#header2 .botones a { color: #32577F; font-size: 1.2rem; }
-header#header2 .botones a img:nth-child(1) { max-width: 25%; max-height: 25%; }
+header#header2 { background-color: #A2CFFF; max-width: 100%; }
+header#header2 .navbar { background-color: #A2CFFF !important; min-height: 100px; }
+header#header2 ul a { color: #32577F; font-size: 1.2rem; }
+header#header2 ul a img { max-height: 15%; max-width: 15%; }
 
 /*Intercambios*/
 section#intercambio { background: #EEF6FF; }

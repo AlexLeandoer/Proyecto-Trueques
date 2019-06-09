@@ -21,13 +21,16 @@
             <div class="col-md-5" id="descripcion">
                 <h3><?php echo $resultado['tituloServicio']?></h3>
                 <p><?php echo $resultado['descripcionServicio']?></p>
-                <!-- <ul>
-                    <li>Lorem, ipsum.</li>
-                    <li>Dolor sit amet</li>
-                    <li>Consectetur</li>
-                    <li>Adipisicing elit</li>
-                </ul> -->
-                <p class="user">Usuario: <a href="#"><img src="http://placehold.it/20x20" alt=""> fulanito12</a></p>
+                <?php 
+                    $id_servicio = $resultado['idServicio'];
+                    $consulta2 = "SELECT * FROM usuarios WHERE usuarios.idUsuario = (SELECT servicios.idUsuario FROM servicios WHERE idServicio = ?)";
+                    $sentencia2 = $conexion->prepare($consulta2);
+                    $sentencia2->execute([$id_servicio]);
+                    $resultado2 = $sentencia2->fetch();
+                ?>
+                <p class="user">Usuario: <img src="img/avatars/<?php echo $resultado2['avatarUsuario'] ?>" alt="">
+                <a href="#" onclick="$('#contenido').load('perfilusuario.php?idUsuario=<?php echo $resultado2['idUsuario'] ?>')">
+                <?php echo $resultado2['nombreUsuario'] ?></a>
                 <button type="button" class="btn btn-dark btn-lg">Ofrecer intercambio</button>
             </div>
         </div>

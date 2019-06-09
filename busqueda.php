@@ -21,7 +21,7 @@
             <img src="img/services/<?php echo $fila['fotoServicio']?>" alt="">
         </div>
         <div class="col-md-8">
-            <h4><?php echo $fila['tituloServicio']?> <img src="http://placehold.it/20x20" alt=""></h4>
+            <h4><?php echo $fila['tituloServicio']?> <img class="mr-auto" src="icons/star.svg" alt=""></h4>
             <p><?php echo $fila['descripcionServicio']?></p>
             <?php 
                  $id_servicio = $fila['idServicio'];
@@ -30,7 +30,7 @@
                  $sentencia2->execute([$id_servicio]);
                  $resultado2 = $sentencia2->fetch();
             ?>
-            <p class="user">Usuario: <img src="http://placehold.it/20x20" alt="">
+            <p class="user">Usuario:
             <a href="#" onclick="$('#contenido').load('perfilusuario.php?idUsuario=<?php echo $resultado2['idUsuario'] ?>')">
             <?php echo $resultado2['nombreUsuario'] ?></a>
             <a href="#" onclick="$('#contenido').load('servicio.php?idServicio=<?= $fila['idServicio']?>')" class="btn btn-primary">Leer más</a></p>

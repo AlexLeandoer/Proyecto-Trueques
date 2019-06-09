@@ -10,24 +10,11 @@
         header("location:login.php");
     }
 
-    if(empty($_GET['idUsuario'])){
-        //Si viene del login
-        $idUsuario = $_SESSION['idUsuario'];
-        $consulta2 = "SELECT * FROM usuarios WHERE idUsuario = ?";
-        $sentencia2 = $conexion->prepare($consulta2);
-        $sentencia2->execute([$idUsuario]);
-        $resultado2 = $sentencia2->fetch();
-    }
-    else{
-        $id = $_GET['idUsuario'];
-        $consulta = "SELECT * FROM usuarios WHERE idUsuario = ?";
-        $sentencia = $conexion->prepare($consulta);
-        $sentencia->execute([$idUsuario]);
-        $resultado = $sentencia->fetch();
-    }
-    
-
-
+    $idUsuario = $_SESSION['idUsuario'];
+    $consulta2 = "SELECT * FROM usuarios WHERE idUsuario = ?";
+    $sentencia2 = $conexion->prepare($consulta2);
+    $sentencia2->execute([$idUsuario]);
+    $resultado2 = $sentencia2->fetch();
 
     if(isset($_POST["cerrar"])){
         session_destroy();
@@ -43,21 +30,31 @@
 
 <?php include_once("header.php"); ?>
 <header id="header2">
-    <div class="logo">
-        logo<!-- <img src="img/logo.png" alt=""> -->
-    </div>
-    <form class="form-inline d-flex justify-content-center buscador">
-        <div class="icon-search">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+        <a class="navbar-brand" href="principal.php">LOGO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <form class="d-flex justify-content-center">
+            <input class="form-control buscador" type="search" placeholder="Buscar..." aria-label="Search">
+        </form> -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                <a class="user-image img-fluid " href="perfil.php"> 
+                    <?= $resultado2['loginUsuario']?> 
+                    <img src="img/avatars/<?php echo $resultado2['avatarUsuario']?>" class="" alt="">
+                </a>
+                </li>
+                <li>
+                    <form action="#" method="POST">
+                        <input type="submit" value="Cerrar sesión" name="cerrar">
+                    </form>
+                </li>
+            </ul>
+            
         </div>
-    </form>
-
-    <div class="botones">
-    <form action="#" method="POST">
-        <input type="submit" value="Cerrar sesión" name="cerrar">
-    </form>
-        <a href="#">Carrito</a>
-    </div>
+    </nav>
 </header>
 
 <section id="perfil">

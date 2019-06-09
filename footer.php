@@ -16,7 +16,11 @@
                     <p>Avda. Doctor Oloriz, 6. Granada, 18012</p>
                 </div>
                 <div class="col-md-4">
-                    <h4></h4>
+                    <h4>Newsletter</h4>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <form action="#">
+                        <input type="email" name="correo" id="nl" class="form-control" placeholder="Correo electronico">
+                    </form>
                 </div>
             </div>
             <hr>
