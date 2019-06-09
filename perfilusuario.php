@@ -9,6 +9,12 @@
     $sentencia = $conexion->prepare($consulta);
     $sentencia->execute([$idUsuario]);
     $resultado = $sentencia->fetch();
+
+    //cargar servicios
+    $consulta2 = "SELECT * FROM servicios WHERE idUsuario = ?";
+    $sentencia2 = $conexion->prepare($consulta2);
+    $sentencia2->execute([$idUsuario]);
+    $resultado2 = $sentencia2->fetchAll();
     
 ?>
 
@@ -19,18 +25,16 @@
             <div class="fondo-profile">
                 <img src="img/avatars/<?php echo $resultado['avatarUsuario'] ?>" alt="">
             </div>
-            <div class="nombre-user">
-            
-            </div>
             <div class="servicios">
-                <div class="col-md-4"><img src="http://placehold.it/200x200" alt=""></div>
-                <div class="col-md-4 separadores"><img src="http://placehold.it/200x200" alt=""></div>
-                <div class="col-md-4"><img src="http://placehold.it/200x200" alt=""></div>
-            </div>
-            <div class="servicios">
-                <div class="col-md-4"><img src="http://placehold.it/200x200" alt=""></div>
-                <div class="col-md-4 separadores"><img src="http://placehold.it/200x200" alt=""></div>
-                <div class="col-md-4"><img src="http://placehold.it/200x200" alt=""></div>
+                <?php foreach ($resultado2 as $fila) { ?>
+                    <div class="col-md-4">
+                        <a href="servicio.php?idServicio=<?php echo $fila['idServicio']?>">
+                            <img src="img/services/<?php echo $fila['fotoServicio']?>" alt="">
+                            
+                        </a>
+                    </div>
+                
+                <?php } ?>
             </div>
            
             <div class="opiniones">
