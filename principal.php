@@ -21,10 +21,6 @@
     $consulta2->execute();
     $resultado2 = $consulta2->fetchAll();
 
-    //Para cargar usuarios con servicios
-    $consulta3 = $conexion->prepare("SELECT * FROM usuarios_con_servicios");
-    $consulta3->execute();
-    $resultado3 = $consulta3->fetchAll();
 
 ?>
 

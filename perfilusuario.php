@@ -14,12 +14,13 @@
 
 <section id="perfilotro">
     <div class="col-md-12">
+    <h4 class="text-center"><?php echo $resultado['nombreUsuario'] ?></h4>
         <div class="profile">
             <div class="fondo-profile">
-                <img src="http://placehold.it/70x70" alt="">
+                <img src="img/avatars/<?php echo $resultado['avatarUsuario'] ?>" alt="">
             </div>
             <div class="nombre-user">
-                <h4 class="text-center"><?php $resultado['nombreUsuario'] ?></h4>
+            
             </div>
             <div class="servicios">
                 <div class="col-md-4"><img src="http://placehold.it/200x200" alt=""></div>
