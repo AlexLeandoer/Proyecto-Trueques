@@ -22,6 +22,10 @@
             $consulta = $conexion->prepare("INSERT INTO usuarios (nombreUsuario, loginUsuario, passUsuario) VALUES (?, ?, ?)");
             $consulta->execute([$_POST["nombreUsuario"], $_POST["loginUsuario"], $contraseña_encriptada]);
             $resultado = $consulta->rowCount();
+            if($resultado){
+                header("location:login.php");
+            }
+            
         }
     }
 ?>
@@ -39,7 +43,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                <a class="user-image" href="login.php?"> 
+                <a class="btn btn-dark user-image" href="login.php?"> 
                    Entrar
                 </a>
                 </li>
@@ -57,15 +61,15 @@
                 <?php echo $mensaje ?>
                 <div class="form-group">
                     <label for="nombreUsuario">Nombre</label>
-                    <input type="text" name="nombreUsuario" placeholder="Nombre de usuario">
+                    <input class="form-control" type="text" name="nombreUsuario" placeholder="Nombre de usuario">
                 </div>
                 <div class="form-group">
                     <label for="loginUsuario">Correo electrónico</label>
-                    <input type="email" name="loginUsuario" placeholder="Correo electrónico">
+                    <input class="form-control" type="email" name="loginUsuario" placeholder="Correo electrónico">
                 </div>
                 <div class="form-group">
                     <label for="passUsuario">Contraseña</label>
-                    <input type="password" name="passUsuario" placeholder="Contraseña">
+                    <input class="form-control" type="password" name="passUsuario" placeholder="Contraseña">
                 </div>
                 <button type="submit" class="btn btn-primary" name="envio">Registrarse</button>
             </form>

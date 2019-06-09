@@ -10,12 +10,26 @@
         header("location:login.php");
     }
 
+    //cargar perfil
     $idUsuario = $_SESSION['idUsuario'];
     $consulta2 = "SELECT * FROM usuarios WHERE idUsuario = ?";
     $sentencia2 = $conexion->prepare($consulta2);
     $sentencia2->execute([$idUsuario]);
     $resultado2 = $sentencia2->fetch();
 
+    //cargar numero de servicios
+    $consulta4 = "SELECT count(*) FROM servicios WHERE idUsuario = ?";
+    $sentencia4 = $conexion->prepare($consulta4);
+    $sentencia4->execute([$idUsuario]);
+    $resultado4 = $sentencia4->fetchColumn();
+
+    //cargar servicios
+    $consulta3 = "SELECT * FROM servicios WHERE idUsuario = ?";
+    $sentencia3 = $conexion->prepare($consulta3);
+    $sentencia3->execute([$idUsuario]);
+    $resultado3 = $sentencia3->fetchAll();
+
+    //Cerrar sesion
     if(isset($_POST["cerrar"])){
         session_destroy();
         unset($_SESSION);
@@ -43,12 +57,12 @@
                 <li class="nav-item active">
                 <a class="user-image img-fluid " href="perfil.php"> 
                     <?= $resultado2['loginUsuario']?> 
-                    <img src="img/avatars/<?php echo $resultado2['avatarUsuario']?>" class="" alt="">
                 </a>
                 </li>
                 <li>
                     <form action="#" method="POST">
-                        <input type="submit" value="Cerrar sesión" name="cerrar">
+                        <label for="cerrar"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</label>
+                        <input type="submit" value="" id="cerrar" name="cerrar" style="display:none;">
                     </form>
                 </li>
             </ul>
@@ -72,7 +86,7 @@
                     </div>
                     <h4>Servicios</h4>
                     <div class="enlaces">
-                        <a href="#">Nuevo servicio</a>
+                        <a href="addServicio.php">Nuevo servicio</a>
                         <a href="#">Editar servicios</a>
                         <a href="#">Lorem ipsum</a>
                         <a href="#">Lorem ipsum</a>
@@ -95,13 +109,20 @@
                     </div>
                     <div class="datos">
                         <div class="col-md-4"><h5>Pedidos</h5><p>N</p></div>
-                        <div class="col-md-4 separadores"><h5>Servicios</h5><p>N</p></div>
+                        <div class="col-md-4 separadores"><h5>Servicios</h5><p><?php print($resultado4) ?></p></div>
                         <div class="col-md-4"><h5>Mensajes</h5><p>N</p></div>
                     </div>
+                    
                     <div class="servicios">
-                        <div class="col-md-4"><img src="http://placehold.it/200x200" alt=""></div>
-                        <div class="col-md-4 separadores"><img src="http://placehold.it/200x200" alt=""></div>
-                        <div class="col-md-4"><img src="http://placehold.it/200x200" alt=""></div>
+                        <?php foreach ($resultado3 as $fila) { ?>
+                            <div class="col-md-4">
+                                <a href="servicio.php?idServicio=<?php echo $fila['idServicio']?>">
+                                    <img src="img/services/<?php echo $fila['fotoServicio']?>" alt="">
+                                   
+                                </a>
+                            </div>
+                        
+                        <?php } ?>
                     </div>
                 </div>
             </div>

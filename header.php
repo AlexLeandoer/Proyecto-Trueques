@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/animate.css">
     <script type="text/javascript" src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>">
-    <title>Document</title>
+    <title>Kōkan</title>
 </head>
 <body>
   

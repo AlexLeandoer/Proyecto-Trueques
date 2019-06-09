@@ -320,6 +320,10 @@ section#perfil{
             img{
                 border: 3px $light solid;
                 border-radius: 4px;
+                &:hover{
+                    opacity: 0.7;
+                    transition: 0.1s;
+                }
             }
         }
     }
@@ -481,12 +485,14 @@ section#servicio{
 /*Pagina de busqueda de servicio*/
 div#busqueda{
     .item_busqueda{
-        padding: 3px 10px;
+        padding: 20px 5px;
         margin: 20px;
         background-color: white;
         border-radius: 3px;
         box-shadow: 0 0px 1px rgba(0,0,0,0.12), 0 0px 5px rgba(0,0,0,0.24);
-
+        img{
+            margin-top: 10px;
+        }
         h4{
             color: $dark;
             font-weight: 600;
@@ -540,12 +546,32 @@ header#header2{
     }
     ul{
         
-        a{
-            color: $dark;
+        a.btn{
+            background: $dark;
+            color: $grisclaro;
             font-size: 1.2rem;
+            border: none;
+            padding: 5px 20px;
+            &:hover{
+                background: rgb(25, 45, 66);
+                box-shadow: 0 4px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            }
             img{
                 max-height: 15%;
                 max-width: 15%;
+            }
+        }
+        a{
+            margin-right: 20px;
+            img{
+                max-height: 15%;
+                max-width: 15%;
+            }
+        }
+        label{
+            &:hover{
+                color: $dark;
+                transition: 0.1s;
             }
         }
     }
@@ -643,7 +669,7 @@ section#intercambio{
 }
 
 section#login{
-    background: $light;
+    padding: 50px;
     form#contenido_form{
         background-color: $primary;
         border: 2px solid $dark;

@@ -2,21 +2,22 @@
     $mensaje = "";
     include "conexion.php";
 
-    // session_start();
+    session_start();
 
-    // if(isset($_COOKIE["Sesión"])){
-    //     session_decode($_COOKIE["Sesión"]);
-    // }
+    if(isset($_COOKIE["Sesión"])){
+        session_decode($_COOKIE["Sesión"]);
+    }
 
-    // if(!isset($_SESSION["idUsuario"])){
-    //     header("location:login.php");
-    // }
+    if(!isset($_SESSION["idUsuario"])){
+        header("location:login.php");
+    }
     
     if($_POST){
         $tituloServicio = $_POST['tituloServicio'];
         $descripcionServicio  = $_POST['descripcionServicio'];
         $nombre_categoria  = $_POST['nombre_categoria'];
         $fotoServicio = $_FILES['fotoServicio'];
+        $idUsuario = $_SESSION['idUsuario'];
 
         $nombreAvatar = $fotoServicio["name"];
         $ruta = "img/services/". $nombreAvatar;
@@ -27,10 +28,10 @@
         $sentencia1->execute([$descripcionServicio]);
         $resultado1 = $sentencia1->fetch();
 
-        $consulta2 = "INSERT INTO servicios (tituloServicio, descripcionServicio, fotoServicio, nombre_categoria) VALUES (?,?,?,?)";
+        $consulta2 = "INSERT INTO servicios (idUsuario, tituloServicio, descripcionServicio, fotoServicio, nombre_categoria) VALUES (?,?,?,?,?)";
 
         $sentencia2=$conexion->prepare($consulta2);
-        $resultado2 = $sentencia2->execute([$tituloServicio,$descripcionServicio,$nombreAvatar,$nombre_categoria]);
+        $resultado2 = $sentencia2->execute([$idUsuario,$tituloServicio,$descripcionServicio,$nombreAvatar,$nombre_categoria]);
 
         if($resultado2){
             move_uploaded_file($temporal,$ruta);

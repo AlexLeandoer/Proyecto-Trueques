@@ -14,7 +14,7 @@
 
 <section id="perfilotro">
     <div class="col-md-12">
-    <h4 class="text-center"><?php echo $resultado['nombreUsuario'] ?></h4>
+    <h4 class="">Perfil de <?php echo $resultado['nombreUsuario'] ?></h4>
         <div class="profile">
             <div class="fondo-profile">
                 <img src="img/avatars/<?php echo $resultado['avatarUsuario'] ?>" alt="">

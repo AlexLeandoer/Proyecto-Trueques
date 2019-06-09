@@ -25,7 +25,6 @@
                 $mensaje = "<div class='alert alert-danger' role='alert'>
                                 No existe un usuario con ese correo electrónico registrado.
                             </div>";
-                die;
             }
             if(password_verify($_POST["contrasena"], $usuario["passUsuario"]) == true){
                 $_SESSION["idUsuario"] = $usuario["idUsuario"];

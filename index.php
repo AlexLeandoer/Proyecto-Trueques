@@ -20,13 +20,13 @@
                 <div class="col-md-6 textobanner">
                     <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maxime praesentium aliquid molestias officiis alias quia assumenda magnam esse deleniti?</p>
-                    <a href="#" class="btn btn-dark">únete</a>
+                    <a href="registro.php" class="btn btn-dark">únete</a>
                 </div>
         
                 <div id="carrusel" class="carousel slide col-md-6" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                        <img class="d-block w-100" src="http://placehold.it/650x950" alt="First slide">
+                        <img class="d-block w-100" src="img/index.jpeg" alt="First slide">
                         </div>
                         <div class="carousel-item">
                         <img class="d-block w-100" src="http://placehold.it/650x950" alt="Second slide">
@@ -101,16 +101,15 @@
     </section>
 
     <section id="contacto">
+
         <form class="container">
+        <h3 class="text-center p-4">Contáctanos</h3>
             <div class="form-row">
-                <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <div class="form-group col-md-12">
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
                 </div>
             </div>
-            <div class="form-group col-md-12">
-                <input type="text class="form-control" id="inputAddress" placeholder="Comentanos algo...">
-            </div>
+            <textarea cols="54" placeholder="Comentanos algo" rows="5"  class="form-control mb-4 p-4"></textarea>
             <div class="form-group">
                 <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="gridCheck">
